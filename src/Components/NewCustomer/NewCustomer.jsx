@@ -12,8 +12,6 @@ function NewCust(props) {
 
     function CheckCustomer() {
 
-
-
          axios.get("http://localhost:8082/customer/get").then(response => {
           console.log(response)
              for (const customer of response.data) {
@@ -35,12 +33,8 @@ function NewCust(props) {
                     setPassword("");
                     props.getCustomer();
                 }).catch(err => console.error(err))
-
-
          })
-
     }
-
 
     return (
 
