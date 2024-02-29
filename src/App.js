@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import Navbar from './Components/Navbar';
 import NewCust from './Components/NewCustomer/NewCustomer';
+import getItems from './Components/Items/GetItems';
+import Customers from './Components/NewCustomer/Customer';
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
         <Route path='/' />
           <Route path='/admin' />
           <Route path='/existing' />  
-          <Route path='/newCust' element={<NewCust/>}/>
+          <Route path='/newCust' element={<Customers/>}/>
           <Route path='/basket' />
         </Routes>
       </Router>
