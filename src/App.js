@@ -4,8 +4,7 @@ import Logo2 from './Logo2.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import Navbar from './Components/Navbar';
-import NewCust from './Components/NewCustomer/NewCustomer';
-import getItems from './Components/Items/GetItems';
+
 import Customers from './Components/NewCustomer/Customer';
 
 function App() {
