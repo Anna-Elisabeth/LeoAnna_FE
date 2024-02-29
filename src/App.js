@@ -4,6 +4,7 @@ import Logo2 from './Logo2.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import Navbar from './Components/Navbar';
+import NewCust from './Components/NewCustomer/NewCustomer';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Route path='/' />
           <Route path='/admin' />
           <Route path='/existing' />  
-          <Route path='/newCust' />
+          <Route path='/newCust' element={<NewCust/>}/>
           <Route path='/basket' />
         </Routes>
       </Router>
