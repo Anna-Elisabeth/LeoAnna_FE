@@ -1,3 +1,0 @@
-function DisplayItem(props) {
-    
-}
