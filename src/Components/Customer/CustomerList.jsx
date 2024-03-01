@@ -22,6 +22,7 @@ function CustomerDisplay(props) {
 return (
     <div class="border border-primary p-2 mb-2 border-4" style={{ backgroundColor: "#ec97db", width: "80%" }}>
         {customerList}
+        
     </div>
 )
 }
