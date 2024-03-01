@@ -39,10 +39,9 @@ function ItemsPT(props) {
           </h4>
           <p>Price: {props.price}</p>
           <p>Quantity {props.quantity}</p>
-          <button style={{marginTop: "10px"}} className="btn btn-success btn-md" onClick={deleteItem}>Add to Cart</button>
           <button onClick={() =>
               navigate("/items/edit/" + props.id)
-            }style={{marginTop: "10px"}} type="submit" className="btn btn-warning">
+            }style={{marginTop: "10px"}} type="submit" className="btn btn-success btn-md">
               {" "}
               Edit Item{" "}
             </button>

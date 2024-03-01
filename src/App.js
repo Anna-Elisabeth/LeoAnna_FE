@@ -8,6 +8,7 @@ import Items from './Components/Items/Items';
 import ItemsPT from './Components/Items/ItemsPT';
 import EditItems from './Components/Items/EditItems';
 import Customers from './Components/Customer/Customer';
+import EditCustomer from './Components/Customer/EditCustomer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/existing' />
         <Route path='/newCust' element={<Customers />} />
         <Route path='/items/edit/:id' element={<EditItems />} />
+        <Route path='/customer/edit/:id' element={<EditCustomer />} />
       </Routes>
     </Router>
 

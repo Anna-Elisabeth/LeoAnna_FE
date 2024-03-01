@@ -1,8 +1,11 @@
 import PropTypes from "prop-types";
 import axios from "axios";
+import EditCustomer from './EditCustomer'
+import { useNavigate } from "react-router-dom";
 
 function DeleteCustomer(props) {
 
+    const navigate = useNavigate();
     function deleteCustomer (){
         axios.delete("http://localhost:8082/customer/delete/" + props.id)
         .then(response => {props.getCustomer()})
@@ -10,12 +13,14 @@ function DeleteCustomer(props) {
         }
 
     return (
-        <div>Customer: {props.id}
-        <div className="row">
-            <p className="col"> {props.name} {props.address} {props.email} {props.phone} {props.username}</p>
-            <p><button style={{width: "80px"}}className="btn btn-danger col" onClick={deleteCustomer}>Delete</button></p>
+        
+        <div>Customer: {props.username}
+            <div className="row">
+                <button onClick={() =>
+              navigate("/customer/edit/" + props.id) }style={{ width: "100px", margin: "10px" }} className="btn btn-warning" >Edit</button>
+                <button style={{ width: "100px", margin: "10px" }} className="btn btn-danger" onClick={deleteCustomer}>Delete</button>
+            </div>
         </div>
-</div>
 
     )
 }

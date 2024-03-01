@@ -18,12 +18,12 @@ function EditCustomer() {
         axios.get("http://localhost:8082/customer/get/" + params.id)
             .then((res) => {
                 console.log(res);
-                setName("");
-                setAddress("");
-                setEmail("");
-                setPhone("");
-                setUsername("");
-                setPassword("");
+                setName(res.data.name);
+                setAddress(res.data.address);
+                setEmail(res.data.email);
+                setPhone(res.data.phone);
+                setUsername(res.data.username);
+                setPassword(res.data.password);
             }).catch((err) => console.error(err))
     }, [params.id]);
     const handleSubmit = (e) => {
@@ -102,7 +102,7 @@ function EditCustomer() {
                     required
                 />
                 <div className="mt-2">
-                    <button className="btn btn-primary" type="submit">Submit</button>
+                    <button className="btn btn-primary" type="submit">Update</button>
                 </div>
             </div>
         </form>
