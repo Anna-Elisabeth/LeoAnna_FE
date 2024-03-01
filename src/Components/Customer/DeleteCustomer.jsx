@@ -14,7 +14,7 @@ function DeleteCustomer(props) {
 
     return (
         
-        <div>Customer: {props.username}
+        <div>Username: {props.username}
             <div className="row">
                 <button onClick={() =>
               navigate("/customer/edit/" + props.id) }style={{ width: "100px", margin: "10px" }} className="btn btn-warning" >Edit</button>

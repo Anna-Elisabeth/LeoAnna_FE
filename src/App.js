@@ -18,7 +18,7 @@ function App() {
         <Route path='/' />
         <Route path='/items' element={<Items />} />
         <Route path='/existing' />
-        <Route path='/newCust' element={<Customers />} />
+        <Route path='/customer' element={<Customers />} />
         <Route path='/items/edit/:id' element={<EditItems />} />
         <Route path='/customer/edit/:id' element={<EditCustomer />} />
       </Routes>
