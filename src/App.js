@@ -7,7 +7,7 @@ import Navbar from './Components/Navbar';
 import Items from './Components/Items/Items';
 import ItemsPT from './Components/Items/ItemsPT';
 import EditItems from './Components/Items/EditItems';
-import Customers from './Components/NewCustomer/Customer';
+import Customers from './Components/Customer/Customer';
 
 function App() {
   return (
