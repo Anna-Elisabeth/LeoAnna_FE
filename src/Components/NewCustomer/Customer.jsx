@@ -14,8 +14,7 @@ function Customers() {
     const [customers, setCustomer] = useState([])
 
     return (
-        <div className= "row">
-            <br /><h3 style={{ color: "#EE3BE3", marginLeft: "20px" }}>Customers</h3><br/><br/>
+        <div className= "row">   
             <br /><div className="col-6"><NewCust getCustomer={getCustomer}/></div>
             <div className="col-4"><CustomerDisplay listCustomer={customers} getCustomer={getCustomer} /></div>
 
