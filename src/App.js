@@ -21,6 +21,8 @@ function App() {
         <Route path='/customer' element={<Customers />} />
         <Route path='/items/edit/:id' element={<EditItems />} />
         <Route path='/customer/edit/:id' element={<EditCustomer />} />
+        <Route path='/customer/existing/:id'/>
+        <Route path='/customer/:id'/>
       </Routes>
     </Router>
 
