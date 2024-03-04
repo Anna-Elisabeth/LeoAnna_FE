@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
+import { useNavigate, useParams } from "react-router-dom";
 
 function NewCust(props) {
 
+    const navigate = useNavigate();
+    const params = useParams();
     const [name, setName] = useState("")
     const [address, setAddress] = useState("")
     const [email, setEmail] = useState("")
@@ -32,15 +35,20 @@ function NewCust(props) {
                     setUsername("");
                     setPassword("");
                     props.getCustomer();
+                    
                 }).catch(err => console.error(err))
          })
-    }
+         
+    
+        }
+
 
     return (
 
         <form onSubmit={e => {
             e.preventDefault();
             CheckCustomer();
+            
         }}>
 
             <br></br>

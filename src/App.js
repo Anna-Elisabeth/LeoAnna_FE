@@ -5,9 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import Navbar from './Components/Navbar';
 import Items from './Components/Items/Items';
-import ItemsPT from './Components/Items/ItemsPT';
+import ItemsPT from './Components/Items/ItemCard';
 import EditItems from './Components/Items/EditItems';
 import Customers from './Components/Customer/Customer';
+import EditCustomer from './Components/Customer/EditCustomer';
+import Basket from './Components/Basket/CustomerItems';
 
 function App() {
   return (
@@ -17,8 +19,12 @@ function App() {
         <Route path='/' />
         <Route path='/items' element={<Items />} />
         <Route path='/existing' />
-        <Route path='/newCust' element={<Customers />} />
+        <Route path='/customer' element={<Customers />} />
         <Route path='/items/edit/:id' element={<EditItems />} />
+        <Route path='/customer/edit/:id' element={<EditCustomer />} />
+        <Route path='/customer/existing/:id'/>
+        <Route path='/customer/:id'/>
+        <Route path='/customeritems' element={<Basket />} />
       </Routes>
     </Router>
 

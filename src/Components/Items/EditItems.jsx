@@ -71,7 +71,7 @@ function EditItems () {
               />
             </div>
             <button type="submit" className="btn btn-success btn-md">
-              Submit
+              Update
             </button>
             <br />
           </form>

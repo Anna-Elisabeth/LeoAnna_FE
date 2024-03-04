@@ -18,12 +18,12 @@ function EditCustomer() {
         axios.get("http://localhost:8082/customer/get/" + params.id)
             .then((res) => {
                 console.log(res);
-                setName("");
-                setAddress("");
-                setEmail("");
-                setPhone("");
-                setUsername("");
-                setPassword("");
+                setName(res.data.name);
+                setAddress(res.data.address);
+                setEmail(res.data.email);
+                setPhone(res.data.phone);
+                setUsername(res.data.username);
+                setPassword(res.data.password);
             }).catch((err) => console.error(err))
     }, [params.id]);
     const handleSubmit = (e) => {
@@ -43,9 +43,8 @@ function EditCustomer() {
 
     return (
         <form onSubmit={handleSubmit}>
-
-            <h1 style={{ color: "white", fontFamily: "italic" }}>New Customer Registration</h1>
-
+            <br />
+            <h1 style={{ color: "white", fontFamily: "italic" }}>Update Customer Details</h1>
             <div class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ marginTop: "50px", marginLeft: "50px", backgroundColor: "#ffffff6b", width: "350px" }}>
                 <label htmlFor="name">Name</label>
                 <br /><input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
@@ -102,7 +101,7 @@ function EditCustomer() {
                     required
                 />
                 <div className="mt-2">
-                    <button className="btn btn-primary" type="submit">Submit</button>
+                    <button className="btn btn-primary" type="submit">Update</button>
                 </div>
             </div>
         </form>
