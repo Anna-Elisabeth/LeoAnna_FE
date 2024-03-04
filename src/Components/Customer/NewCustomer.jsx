@@ -19,7 +19,7 @@ function NewCust(props) {
           console.log(response)
              for (const customer of response.data) {
                 if (customer.username.toLowerCase() === username.toLowerCase()) {
-                          alert("Cusstomer already exists")
+                          alert("Customer already exists")
                           return;
                  }
              }

@@ -3,7 +3,7 @@ import { useEffect,useState } from "react";
 import NewCust from "./NewCustomer";
 import CustomerDisplay from "./CustomerList";
 
-function Customers() {
+function Customers(props) {
     
     function getCustomer() {
         axios.get("http://localhost:8082/customer/get")

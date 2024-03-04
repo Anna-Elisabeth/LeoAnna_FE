@@ -3,8 +3,6 @@ import Card from "react-bootstrap/Card";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import productImages from "../../productsImage.json"
-import Navbar from "../Navbar"
-
 
 function ItemCard(props) {
     const navigate = useNavigate();
@@ -25,11 +23,11 @@ function ItemCard(props) {
       }
 
       function addToCart() {
-        alert("Item added to cart! Please adjust quantity in the basket."); 
-        
-        
-    }
 
+        axios.post("http://localhost:8082/item/addItem/" + props.id)
+        .then(response => {props.setCustomer(response.data)})
+        .catch(err => console.error(err))
+      }
 
     return (  
     <Card style={{width: "300px"}} className="col-sm-6 col-md-4 col-lg-3 m-4">

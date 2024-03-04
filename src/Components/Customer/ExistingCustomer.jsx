@@ -1,19 +1,17 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import { useNavigate, useParams } from "react-router-dom";
-import PropTypes from "prop-types";
  
 function LoginCustomer(props) {
  
     const [username, getUsername] = useState("")
     const [password, getPassword] = useState("")
     const navigate = useNavigate();
-    const params = useParams();
- 
+    const params = useParams(); 
  
     function GetCustomer() {
  
-    axios.get("http://localhost:8082/customer/get")
+    axios.get("http://localhost:8082/customer/get/" + params.id)
         .then(response => {
             console.log(response);
             getUsername("");
@@ -48,10 +46,10 @@ return (<form onSubmit={e => {
     />
     <div className="mt-2">
     <button onClick={() =>
-              navigate("/customer/get/" + props.id)
+              navigate("/customer/" + props.id)
             }style={{marginTop: "10px"}} type="submit" className="btn btn-success btn-md">
               {" "}
-              Edit Item{" "}
+              Login{" "}
             </button>
     </div>
 </form>
