@@ -3,9 +3,10 @@ import Card from "react-bootstrap/Card";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import productImages from "../../productsImage.json"
+import Navbar from "../Navbar"
 
 
-function ItemsPT(props) {
+function ItemCard(props) {
     const navigate = useNavigate();
 
     function deleteItem (){
@@ -23,9 +24,15 @@ function ItemsPT(props) {
           }
       }
 
+      function addToCart() {
+        alert("Item added to cart! Please adjust quantity in the basket."); 
+        
+        
+    }
+
 
     return (  
-    <Card className="col-sm-6 col-md-4 col-lg-3 m-4">
+    <Card style={{width: "300px"}} className="col-sm-6 col-md-4 col-lg-3 m-4">
         <div className="card-body ">
           <h4 className="card-title">
             {" "}
@@ -33,14 +40,13 @@ function ItemsPT(props) {
               src={getImageUrl(props.name)}
               alt="avatar"
               className="card-person"
-              style={{ maxWidth: '100%', height: '100%' }}
+              style={{ maxWidth: '50%', height: '50%' }}
             />
-           <p>Item: {props.name}</p>
+           <p> {props.name}</p>
           </h4>
-          <p>Price: {props.price}</p>
-          <p>Quantity {props.quantity}</p>
-          
-          <button style={{marginTop: "10px"}} className="btn btn-success btn-md" onClick={deleteItem}>Add to Cart</button>
+          <p>Price: £{props.price}</p>
+          {/* <p>Quantity: {props.quantity}</p> */}
+          <button style={{marginTop: "10px"}} className="btn btn-success btn-md" onClick={addToCart}>Add to Cart</button>
           <button onClick={() =>
               navigate("/items/edit/" + props.id)
             }style={{marginTop: "10px"}} type="submit" className="btn btn-warning btn-md">
@@ -52,7 +58,7 @@ function ItemsPT(props) {
     </Card>
   );
 }
-ItemsPT.propTypes = {
+ItemCard.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
@@ -61,4 +67,4 @@ ItemsPT.propTypes = {
 
     
 
-export default ItemsPT;
+export default ItemCard;

@@ -54,24 +54,24 @@ function Items (props) {
         
         {" "}
         <br></br>
-        <h1 style={{color:"white", fontFamily: "italic"}}>Items</h1>
+        <h1 style={{color:"Black", fontFamily: "italic"}}>Items</h1>
 
         <div class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ marginTop:"50px", marginLeft:"50px", backgroundColor: "#ffffff6b", width: "350px" }}>
-        <label htmlFor="fn">Item &nbsp;</label>
+        <label htmlFor="fn">Item name: &nbsp;</label>
           <input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
             value={name}
             onChange={(e) => setName(e.target.value)}
             id="fn"
             type="text"            
           />
-          <label htmlFor="ln">Price &nbsp;</label>
+          <label htmlFor="ln">Price: &nbsp;</label>
           <input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             id="ln"
             type="text"           
           />
-          <label htmlFor="ad">Quantity &nbsp; &nbsp; &nbsp;</label>
+          <label htmlFor="ad">Quantity: &nbsp; &nbsp; &nbsp;</label>
           <input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
@@ -81,7 +81,6 @@ function Items (props) {
           <br></br>
           <button className="btn btn-primary" type="submit">Submit</button>
         </div>
-        
         <br />
       </form>
       <br />

@@ -2,7 +2,6 @@ import DeleteCustomer from "./DeleteCustomer";
 
 function CustomerDisplay(props) {
     const customerList = []
-
     for (const customer of props.listCustomer) {
         console.log("Customer:", customer);
         customerList.push(
@@ -20,8 +19,8 @@ function CustomerDisplay(props) {
     }
 
 return (
-    <div class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ marginTop:"50px", marginLeft:"50px", backgroundColor: "#ffffff6b", width: "350px" }}>
-        {customerList}
+    <div class="">
+        <div className="row">{customerList}</div>
     </div>
 )
 }
