@@ -10,6 +10,7 @@ import EditItems from './Components/Items/EditItems';
 import Customers from './Components/Customer/Customer';
 import EditCustomer from './Components/Customer/EditCustomer';
 import Basket from './Components/Basket/CustomerItems';
+import LoginCustomer from './Components/Customer/ExistingCustomer';
 
 import LoginCustomer from './Components/Customer/ExistingCustomer';
 
