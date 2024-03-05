@@ -12,6 +12,7 @@ import EditCustomer from './Components/Customer/EditCustomer';
 import Basket from './Components/Basket/CustomerItems';
 import LoginCustomer from './Components/Customer/ExistingCustomer';
 
+import LoginCustomer from './Components/Customer/ExistingCustomer';
 
 function App() {
   return (
@@ -20,13 +21,12 @@ function App() {
       <Routes>
         <Route path='/' />
         <Route path='/items' element={<Items />} />
-        <Route path='/existing' element={<LoginCustomer/>} />
+        <Route path='/customer/get/' element={<LoginCustomer/>} />
         <Route path='/customer' element={<Customers />} />
         <Route path='/items/edit/:id' element={<EditItems />} />
         <Route path='/customer/edit/:id' element={<EditCustomer />} />
         <Route path='/customer/existing/:id'/>
-        <Route path='/customeritems' element={<Basket />} />
-        <Route path='/customer/get/:id'element={<Basket />}/>
+        <Route path='/customer/get/:id' element={<Basket/>} />
       </Routes>
     </Router>
 

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import ItemCard from "../Items/ItemCard";
- 
 function Basket(props) {
     const params = useParams();
     const [quantity, setQuantity] = useState("");
