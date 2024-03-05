@@ -48,7 +48,7 @@ function Navbar() {
                       Sign In
                     </a>
                     <ul class="dropdown-menu">
-                      <li><Link to="/existing" class="dropdown-item" >Existing Customer</Link></li>
+                      <li><Link to="/customer/get/" class="dropdown-item" >Existing Customer</Link></li>
                       <li><Link to="/customer" class="dropdown-item">New Customer</Link></li>
                       <li><Link to="/items" class="dropdown-item">Items</Link></li>
                       
