@@ -10,8 +10,9 @@ import {  useState } from "react";
 function ItemCard(props) {
     
     const params = useParams ("");
-    const [itemID, setItemID] = useState();
+    const [itemID, setItemID] = useState("");
     const navigate = useNavigate();
+    
 
     function deleteItem (){
         axios.delete("http://localhost:8082/item/delete/" + props.id)
@@ -29,7 +30,12 @@ function ItemCard(props) {
       }
 
             function addToCart(){
-        axios.post("http://localhost:8082/item/addItem", { item: { id: itemID }, customer: { id: params.id } })
+              const itemID = props.id
+              if (!itemID) {
+                console.error("Item ID is null or undefined.");
+                return;
+            }
+            axios.post("http://localhost:8082/item/addItem/1", {id: itemID} )
             .then(response => {
                 console.log(response);
                 props.getItems();
@@ -39,6 +45,7 @@ function ItemCard(props) {
     return (  
     <Card style={{width: "300px"}} className="col-sm-6 col-md-4 col-lg-3 m-4">
         <div className="card-body ">
+          <h2>id: {props.id}</h2>
           <h4 className="card-title">
             {" "}
             <img
@@ -67,7 +74,7 @@ ItemCard.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  quantity: PropTypes.string.isRequired
+  quantity: PropTypes.number.isRequired
 };
 
     

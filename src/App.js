@@ -12,8 +12,6 @@ import EditCustomer from './Components/Customer/EditCustomer';
 import Basket from './Components/Basket/CustomerItems';
 import LoginCustomer from './Components/Customer/ExistingCustomer';
 
-import LoginCustomer from './Components/Customer/ExistingCustomer';
-
 function App() {
   return (
     <Router>
