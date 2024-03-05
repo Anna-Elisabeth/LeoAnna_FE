@@ -27,7 +27,7 @@ function Basket(props) {
                         
 
 
-                        <br></br><select className="form-control border-3 border-primary rounded" style={{ width: "250px" }} value={quantity.id} onChange={(e) => setQuantity(e.target.value)} required>
+                        <br></br><select className="form-control border-3 border-primary rounded" style={{ width: "100%" }} value={quantity.id} onChange={(e) => setQuantity(e.target.value)} required>
                             <option value="">Select Quantity</option>
                             <option value="0">0</option>
                             <option value="1">1</option>
