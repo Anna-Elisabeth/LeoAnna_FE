@@ -46,7 +46,9 @@ return (<form onSubmit={e => {
     />
     <div className="mt-2">
     <button onClick={() =>
+
               navigate("/customer/" + props.id)
+
             }style={{marginTop: "10px"}} type="submit" className="btn btn-success btn-md">
               {" "}
               Login{" "}
