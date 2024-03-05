@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 
 function Basket(props) {
 const params = useParams();
+const [quantity, setQuantity] = useState("");
 const [basket, setBasket] = useState("")
     function getCustomer() {
         axios.get("http://localhost:8082/customer/get/" + params.id)
@@ -20,8 +21,23 @@ const [basket, setBasket] = useState("")
 <div>
         <h4>{baskItems.name}</h4>
             <h6> £ {baskItems.price}</h6>
-             {baskItems.quantity}</div>
+            
+            
+             <select className="form-control border-3 border-primary rounded" style={{width:"250px"}} value={quantity} onChange={(e) => setQuantity(e.target.value)} required>
+             <option value="">Select Quantity</option>
+             <option value="1">1</option>
+             <option value="2">2</option>
+             <option value="3">3</option>
+             <option value="4">4</option>
+             <option value="5">5</option>
+             <option value="6">6</option>
+             <option value="7">7</option>
+             <option value="8">8</option>
+             <option value="9">9</option>
+         </select></div>
     )}
+
+    
    
     return (
        <div>{basketItems}
