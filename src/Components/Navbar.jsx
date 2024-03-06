@@ -7,7 +7,6 @@ function Navbar() {
 
   const [basket, setBasket] = useState([])
 
-
   return (
     <>
       <div className="main-navbar shadow-sm sticky-top">
@@ -51,7 +50,7 @@ function Navbar() {
                       <li><Link to="/customer/get/" class="dropdown-item" >Existing Customer</Link></li>
                       <li><Link to="/customer" class="dropdown-item">New Customer</Link></li>
                       <li><Link to="/items" class="dropdown-item">Items</Link></li>
-                      
+                      <li><Link to="admin" class="dropdown-item">Admin</Link></li>
                     </ul>
                   </div>
                 </ul>

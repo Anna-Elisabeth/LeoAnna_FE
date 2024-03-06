@@ -20,7 +20,7 @@ function Counter({ initialValue, onChange }) {
     };
 
     const clearCount = () => {
-        setCount(1);
+        setCount(0);
     };
 
     return (

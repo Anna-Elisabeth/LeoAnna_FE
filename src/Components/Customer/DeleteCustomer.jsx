@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import axios from "axios";
-import EditCustomer from './EditCustomer'
 import { useNavigate } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 
@@ -24,7 +23,7 @@ function DeleteCustomer(props) {
                     <div className="row">
                         <button onClick={() => navigate("/customer/edit/" + props.id)} style={{ width: "100px", margin: "10px" }} className="btn btn-warning">Edit</button>
                         <button style={{ width: "100px", margin: "10px" }} className="btn btn-danger" onClick={deleteCustomer}>Delete</button>
-                        <button onClick={() => navigate("/customer/get/" + props.id)} style={{ width: "100px", margin: "10px" }} className="btn btn-danger" >View Item</button>
+                        <button onClick={() => navigate("/customer/get/" + props.id)} style={{ width: "100px", margin: "10px" }} className="btn btn-success" >Basket</button>
                     </div>
                 </div>
             </Card>

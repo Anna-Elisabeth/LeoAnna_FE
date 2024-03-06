@@ -13,7 +13,6 @@ function EditCustomer() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
-
     useEffect(() => {
         axios.get("http://localhost:8082/customer/get/" + params.id)
             .then((res) => {
@@ -39,7 +38,6 @@ function EditCustomer() {
             })
             .catch((error) => console.error(error));
     };
-
 
     return (
         <form onSubmit={handleSubmit}>

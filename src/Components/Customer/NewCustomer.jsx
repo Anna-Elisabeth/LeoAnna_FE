@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from 'axios';
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -53,7 +53,7 @@ function NewCust(props) {
         }}>
 
             <br></br>
-<h1 style={{color:"white", fontFamily: "italic"}}>New Customer Registration</h1>
+<h2 class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{  color: "White", fontFamily: "italic", width: "400px", backgroundColor: "#ffffff6b"}}>New Customer Registration</h2>
 
             <div class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ marginTop:"50px", marginLeft:"50px", backgroundColor: "#ffffff6b", width: "350px" }}>
                 <label htmlFor="name">Name</label>
