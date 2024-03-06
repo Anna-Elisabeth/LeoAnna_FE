@@ -8,6 +8,7 @@ function Items (props) {
     const [price, setPrice] = useState("");
     const [quantity, setQuantity] = useState("");
     const [items, setItem] = useState([]);
+    const [description, setDescription] = useState("");
 
     function getItems() {
         axios.get("http://localhost:8082/item/get")
@@ -20,12 +21,13 @@ function Items (props) {
 
     function createItem() {
         axios.post("http://localhost:8082/item/create",{
-        name, price, quantity})
+        name, price, quantity, description})
         .then((response) => { 
             console.log(response);
             setName("");
             setPrice("");
             setQuantity("");
+            setDescription("");
             getItems();
         })
         .catch(err => console.error(err));
@@ -54,13 +56,20 @@ function Items (props) {
         
         {" "}
         <br></br>
-        <h1 style={{color:"Black", fontFamily: "italic"}}>Items</h1>
+        <h2 class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{color:"White", fontFamily: "italic", width: "150px", backgroundColor: "#ffffff6b"}}>Items</h2>
 
         <div class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ marginTop:"50px", marginLeft:"50px", backgroundColor: "#ffffff6b", width: "350px" }}>
-        <label htmlFor="fn">Item name: &nbsp;</label>
+        <label htmlFor="fn">Item Name: &nbsp;</label>
           <input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
             value={name}
             onChange={(e) => setName(e.target.value)}
+            id="fn"
+            type="text"            
+          />
+          <label htmlFor="fn">Item Description: &nbsp;</label>
+          <input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
             id="fn"
             type="text"            
           />

@@ -11,22 +11,27 @@ import Customers from './Components/Customer/Customer';
 import EditCustomer from './Components/Customer/EditCustomer';
 import Basket from './Components/Basket/CustomerItems';
 import LoginCustomer from './Components/Customer/ExistingCustomer';
+import Home from './Components/Home';
+
 
 function App() {
   return (
+    
     <Router>
       <Navbar className="navbar align-content-center " style={{ display: "flex", backgroundColor: "rgba(0, 0, 0, 0)" }} />
       <Routes>
-        <Route path='/' />
+        <Route path='/'element={<Home />} />
         <Route path='/items' element={<Items />} />
         <Route path='/customer/get/' element={<LoginCustomer/>} />
         <Route path='/customer' element={<Customers />} />
         <Route path='/items/edit/:id' element={<EditItems />} />
         <Route path='/customer/edit/:id' element={<EditCustomer />} />
         <Route path='/customer/existing/:id'/>
-        <Route path='/customer/get/:id' element={<Basket/>} />
+        <Route path='/customer/get/:id' element={<Basket/>}/>
       </Routes>
     </Router>
+
+
 
 
   );
