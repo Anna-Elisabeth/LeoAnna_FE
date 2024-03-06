@@ -26,6 +26,7 @@ function Basket(props) {
         setBasket(updatedBasket);
     }
 
+
     const basketItems = basket.map((basketItem, index) => (
         
         <div className="d-inline-flex" style={{ maxWidth: "20%", margin: "20px" }} key={index}>
@@ -44,6 +45,7 @@ function Basket(props) {
                         onChange={(newQuantity) => handleQuantityChange(index, newQuantity)}
                     />
                     <h6>Total: £ {basketItem.price * (basketItem.quantity || 0)}</h6>
+
                 </div>
             </div>
         </div>
