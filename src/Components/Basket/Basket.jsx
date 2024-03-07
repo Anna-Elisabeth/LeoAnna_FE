@@ -4,11 +4,18 @@ import { useParams } from "react-router-dom";
 import Counter from "./Counter";
 import productImages from "../../productsImage.json";
 import { useNavigate } from "react-router-dom";
+import confetti from "canvas-confetti";
 
 function Basket(props) {
     const params = useParams();
     const [basket, setBasket] = useState([]);
     const navigate = useNavigate();
+    const handleConfetti = () => {
+      confetti({
+        particleCount: 500,
+        spread: 320,
+      });
+    };
 
     useEffect(() => {
       getCustomer();
@@ -110,7 +117,7 @@ function Basket(props) {
         </tbody>
       </table><br></br>
             <div><h2 class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ color: "Blue", fontFamily: "italic", width: "350px", backgroundColor: "#ffffff6b"}}>Basket Total : £{basketTotal}</h2></div>
-            <button className="btn btn-primary" type="submit">Checkout</button>
+            <button onClick={handleConfetti} className="btn btn-primary" type="submit">Checkout</button>
         </div>
     );
 }
