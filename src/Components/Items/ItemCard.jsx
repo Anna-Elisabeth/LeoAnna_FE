@@ -15,7 +15,9 @@ function ItemCard(props) {
 
   function deleteItem() {
     axios.delete("http://localhost:8082/item/delete/" + props.id)
-      .then(response => { props.getItems() })
+      .then(response => { 
+        props.getItems() 
+      })
       .catch(err => console.error(err))
   }
 
@@ -38,6 +40,7 @@ function ItemCard(props) {
       .then(response => {
         console.log(response);
         props.getItems();
+        alert("Item added to cart, please adjust quantity in the basket")
       }).catch(err => console.error(err))
   }
 

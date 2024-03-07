@@ -35,7 +35,7 @@ function NewCust(props) {
                     setUsername("");
                     setPassword("");
                     props.getCustomer();
-                    navigate("/customer/get");
+                    
                     
                 }).catch(err => console.error(err))
          })

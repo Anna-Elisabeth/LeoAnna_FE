@@ -3,15 +3,26 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Counter from "./Counter";
 import productImages from "../../productsImage.json";
+import { useNavigate } from "react-router-dom";
 
 function Basket(props) {
     const params = useParams();
     const [basket, setBasket] = useState([]);
-
+    const navigate = useNavigate();
 
     useEffect(() => {
-        getCustomer();
-    }, []);
+      getCustomer();
+  }, []);
+
+    function removeFromBasket(itemID) {
+      console.log("Removing item with ID:", itemID)
+      axios.patch("http://localhost:8082/item/removeItem/" + itemID)
+      .then(() => {
+        getCustomer()
+    })
+    .catch(err => console.error(err));
+}
+
 
     function getCustomer() {
         axios.get("http://localhost:8082/customer/get/" + params.id)
@@ -19,12 +30,13 @@ function Basket(props) {
             .catch(console.log);
     }
 
-    function handleQuantityChange(index, newQuantity) {
+    function quantityChange(index, newQuantity) {
         const updatedBasket = [...basket];
         updatedBasket[index].quantity = newQuantity;
         setBasket(updatedBasket);
     }
 
+  
     const basketItems = basket.map((basketItem, index) => (
 
         <div className="d-inline-flex" style={{ maxWidth: "20%", margin: "20px" }} key={index}>
@@ -40,10 +52,10 @@ function Basket(props) {
                     <h8>Price: £ {basketItem.price}</h8>
                     <Counter
                         value={basketItem.quantity}
-                        onChange={(newQuantity) => handleQuantityChange(index, newQuantity)}
+                        onChange={(newQuantity) => quantityChange(index, newQuantity)}
                     />
                     <h6>Total: £ {basketItem.price * (basketItem.quantity || 0)}</h6>
-
+                    
                 </div>
             </div>
         </div>
@@ -69,6 +81,7 @@ function Basket(props) {
             <th>Price</th>
             <th>Quantity</th>
             <th>Total</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -87,10 +100,11 @@ function Basket(props) {
               <td>
                 <Counter
                   value={basketItem.quantity}
-                  onChange={(newQuantity) => handleQuantityChange(index, newQuantity)}
+                  onChange={(newQuantity) => quantityChange(index, newQuantity)}
                 />
               </td>
               <td class="text-decoration-underline"  style={{color: "blue"}}>£ {basketItem.price * (basketItem.quantity || 0)}</td>
+              <td><button className="btn btn-primary" onClick={() => removeFromBasket(basketItem.id)}>Remove</button></td>
             </tr>
           ))}
         </tbody>

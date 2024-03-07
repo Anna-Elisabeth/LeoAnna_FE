@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from "react";
 
-function Counter({ initialValue, onChange }) {
-    const [count, setCount] = useState(initialValue || 1);
+function Counter({ value, onChange }) {
+    const [count, setCount] = useState(value || 1);
 
     useEffect(() => {
-        onChange(count);
-    }, [count, onChange]);
+        if (value !== count) {
+            setCount(value);
+        }
+    }, [value]);
 
     const incrementCount = () => {
         if (count < 10) {
             setCount(count + 1);
+            onChange(count + 1);
         }
     };
 
     const decrementCount = () => {
         if (count > 1) {
             setCount(count - 1);
+            onChange(count - 1);
         }
     };
 
     const clearCount = () => {
         setCount(0);
+        onChange(0);
     };
 
     return (
