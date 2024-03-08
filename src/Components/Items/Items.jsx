@@ -63,28 +63,28 @@ function Items (props) {
           <input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
             value={name}
             onChange={(e) => setName(e.target.value)}
-            id="fn"
+            id="iname"
             type="text"            
           />
           <label htmlFor="fn">Item Description: &nbsp;</label>
           <input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            id="fn"
+            id="idesc"
             type="text"            
           />
           <label htmlFor="ln">Price: &nbsp;</label>
           <input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            id="ln"
+            id="iprice"
             type="text"           
           />
           <label htmlFor="ad">Quantity: &nbsp; &nbsp; &nbsp;</label>
           <input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
-            id="ad"
+            id="iquant"
             type="text"            
           />
           <br></br>
@@ -92,8 +92,7 @@ function Items (props) {
         </div>
         <br />
       </form>
-      <br />
-      <br />
+
       <DisplayItems items={items}  getItems={getItems}/> 
     </div>
   );

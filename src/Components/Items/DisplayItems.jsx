@@ -21,9 +21,8 @@ function DisplayItems(props) {
   return (
 
     <div><h2 class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{  marginTop:"50px", backgroundColor: "#ffffff6b", width: "150px", color: "Blue", fontFamily: "italic"}} >Products</h2>
-      <br />
       <div className="item-container">
-        <div className="row">{itemArray}</div>
+        <div  className="row">{itemArray}</div>
       </div>
     </div>
   );

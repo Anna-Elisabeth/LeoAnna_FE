@@ -55,7 +55,7 @@ function NewCust(props) {
             <br></br>
 <h2 class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{  color: "White", fontFamily: "italic", width: "400px", backgroundColor: "#ffffff6b"}}>New Customer Registration</h2>
 
-            <div class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ marginTop:"50px", marginLeft:"50px", backgroundColor: "#ffffff6b", width: "350px" }}>
+            <div class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ marginTop:"30px", marginLeft:"200px", backgroundColor: "#ffffff6b", width: "350px" }}>
                 <label htmlFor="name">Name</label>
                 <br /><input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
                     id="name"
@@ -111,7 +111,7 @@ function NewCust(props) {
                     required
                 />
                 <div className="mt-2">
-                    <button className="btn btn-primary" type="submit">Submit</button>
+                    <button className="btn btn-primary" id="submit" type="submit">Submit</button>
                 </div>
             </div>
         </form>

@@ -62,7 +62,7 @@ function ItemCard(props) {
         <button style={{ marginTop: "10px", marginRight: "15px" }} className="btn btn-success btn-md" onClick={addToCart}>Add to Cart</button>
         <button onClick={() =>
           navigate("/items/edit/" + props.id)
-        } style={{ marginTop: "10px" }} type="submit" className="btn btn-warning btn-md">
+        } style={{ marginTop: "10px" }} type="submit" id="edit" className="btn btn-warning btn-md">
           {" "}
           Edit Item{" "}
         </button>

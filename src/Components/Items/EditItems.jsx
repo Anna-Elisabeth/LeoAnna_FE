@@ -54,7 +54,7 @@ function EditItems() {
               value={name}
               br
               onChange={(e) => setName(e.target.value)}
-              id="fn"
+              id="inameup"
               type="text"
               className="form-control"
             />
@@ -63,7 +63,7 @@ function EditItems() {
               value={description}
               br
               onChange={(e) => setName(e.target.value)}
-              id="fn"
+              id="idescup"
               type="text"
               className="form-control"
             />
@@ -71,7 +71,7 @@ function EditItems() {
             <input
               value={price}
               onChange={(e) => setPrice(e.target.value)}
-              id="ln"
+              id="ipriceup"
               type="text"
               class="form-control"
             />
