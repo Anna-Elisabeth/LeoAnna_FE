@@ -39,11 +39,7 @@ function Navbar() {
                     Items
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link to="/customer/get/" className="nav-link" style={{ color: "white", textDecoration: "underline" }}>
-                    Existing Customer
-                  </Link>
-                </li>
+                
                 <li className="nav-item">
                   <Link to="/admin" className="nav-link" style={{ color: "white", textDecoration: "underline" }}>
                     Admin

@@ -24,7 +24,7 @@ function App() {
       <Routes>
         <Route path='/'element={<Home />} />
         <Route path='/items' element={<Items />} />
-        <Route path='/customer/get/' element={<LoginCustomer/>} />
+      
         <Route path='/customer' element={<Customers />} />
         <Route path='/items/edit/:id' element={<EditItems />} />
         <Route path='/customer/edit/:id' element={<EditCustomer />} />
