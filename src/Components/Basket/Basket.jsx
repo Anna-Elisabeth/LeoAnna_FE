@@ -43,7 +43,7 @@ function Basket(props) {
         setBasket(updatedBasket);
     }
 
-  
+    // <div className="col-1 text-right">£{taxPrice.toFixed(2)}</div>
     const basketItems = basket.map((basketItem, index) => (
 
         <div className="d-inline-flex" style={{ maxWidth: "20%", margin: "20px" }} key={index}>
@@ -56,12 +56,12 @@ function Basket(props) {
                         style={{ maxWidth: '100px', height: '100px' }}
                     />
                     <h5>{basketItem.name}</h5>
-                    <h8>Price: £ {basketItem.price}</h8>
+                    <h8>Price: £ {basketItem.price.toFixed(2)}</h8>
                     <Counter
                         value={basketItem.quantity}
                         onChange={(newQuantity) => quantityChange(index, newQuantity)}
                     />
-                    <h6>Total: £ {basketItem.price * (basketItem.quantity || 0)}</h6>
+                    <h6>Total: £ {basketItem.price.toFixed(2) * (basketItem.quantity || 0).toFixed(2)}</h6>
                     
                 </div>
             </div>
@@ -70,7 +70,7 @@ function Basket(props) {
 
     const basketTotal = basket.reduce((total, item) => {
         return total + (Number(item.price) * Number(item.quantity));
-      }, 0);
+      }, 0).toFixed(2);
 
     function getImageUrl(productName) {
         const productNameLower = productName.toLowerCase();
@@ -110,7 +110,7 @@ function Basket(props) {
                   onChange={(newQuantity) => quantityChange(index, newQuantity)}
                 />
               </td>
-              <td class="text-decoration-underline"  style={{color: "blue"}}>£ {basketItem.price * (basketItem.quantity || 0)}</td>
+              <td class="text-decoration-underline"  style={{color: "blue"}}>£ {(basketItem.price * (basketItem.quantity || 0)).toFixed(2)}</td>
               <td><button className="btn btn-primary" onClick={() => removeFromBasket(basketItem.id)}>Remove</button></td>
             </tr>
           ))}
