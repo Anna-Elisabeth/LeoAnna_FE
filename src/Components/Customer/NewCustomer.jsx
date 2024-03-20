@@ -54,7 +54,7 @@ function NewCust(props) {
         }}>
 
             <br></br>
-<h2 className="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{  color: "White", fontFamily: "italic", width: "400px", backgroundColor: "#ffffff6b"}}>New Customer Registration</h2>
+<h1 className="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{  color: "White", fontFamily: "italic", width: "400px", backgroundColor: "#ffffff6b"}}>New Customer Registration</h1>
 
             <div className="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ marginTop:"30px", marginLeft:"200px", backgroundColor: "#ffffff6b", width: "350px" }}>
                 <label htmlFor="name">Name</label>
@@ -112,8 +112,8 @@ function NewCust(props) {
                     required
                 />
                 <div className="mt-2">
-                <label htmlFor="al">Submit Button:</label>
-                    <button className="btn btn-primary"  type="submit" id="al" aria-label="Submit">Submit</button>
+                {/* <label htmlFor="al">Submit Button:</label> */}
+                    <button className="btn btn-primary"  type="submit" id="al" aria-label="Submit Button">Submit</button>
                 </div>
            
            
