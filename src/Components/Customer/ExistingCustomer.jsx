@@ -12,10 +12,10 @@ function ExistingCustomer(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    
+    // Form validation (optional)
 
     try {
-      const response = await axios.get("http://localhost:8082/customer/get"); 
+      const response = await axios.get("http://localhost:8082/customer/get"); // Replace with your API endpoint
       const existingUsers = response.data;
       const exists = existingUsers.some(user => user.username === username && user.password === password);
 
@@ -37,7 +37,6 @@ function ExistingCustomer(props) {
 
       <br/>
       <h2 className="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ color: "white", fontFamily: "italic", width: "150px", backgroundColor: "#ffffff6b" }}>Login</h2>
-
       <div className="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ marginTop: "50px", marginLeft: "50px", backgroundColor: "#ffffff6b", width: "350px" }}>
         <br/><label htmlFor="username">Username</label>
         <br/><input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
