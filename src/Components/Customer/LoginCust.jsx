@@ -28,7 +28,7 @@ function LoginCust(props) {
                         if (exists) {
 
                             navigate("/items");
-                            alert(`You have landed and you are welcome here, ${username}`);
+                            alert(`Welcome, ${username}, click here to start shopping`);
                         } else {
                             console.log("Death to Intruders");
                             alert("In the end you are all expendable")
