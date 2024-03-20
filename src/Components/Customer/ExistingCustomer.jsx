@@ -12,10 +12,10 @@ function ExistingCustomer(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Form validation (optional)
+    
 
     try {
-      const response = await axios.get("http://localhost:8082/customer/get"); // Replace with your API endpoint
+      const response = await axios.get("http://localhost:8082/customer/get"); 
       const existingUsers = response.data;
       const exists = existingUsers.some(user => user.username === username && user.password === password);
 
