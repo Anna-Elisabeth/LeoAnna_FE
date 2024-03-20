@@ -6,6 +6,7 @@ function Navbar() {
   const [basket, setBasket] = useState([]);
 
   return (
+    <nav role="navigation">
     <div className="main-navbar shadow-sm sticky-top">
       <div className="top-navbar">
         <div className="container-fluid">
@@ -18,8 +19,8 @@ function Navbar() {
             <div className="col-md-4 my-auto">
               <form role="search">
                 <div className="input-group">
-                  <input type="search" placeholder="Search" className="form-control" style={{ width: "200px", marginRight: "10px" }} />
-                  <button className="btn bg-white" type="submit">
+                  <input type="search" placeholder="Search" className="form-control" aria-label="Search Bar" style={{ width: "200px", marginRight: "10px" }} />
+                  <button className="btn bg-white" type="submit" id="submit" aria-label="Search Button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                       <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                     </svg>
@@ -39,11 +40,7 @@ function Navbar() {
                     Items
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link to="/customer/get/" className="nav-link" style={{ color: "white", textDecoration: "underline" }}>
-                    Existing Customer
-                  </Link>
-                </li>
+                
                 <li className="nav-item">
                   <Link to="/admin" className="nav-link" style={{ color: "white", textDecoration: "underline" }}>
                     Admin
@@ -64,6 +61,7 @@ function Navbar() {
         </div>
       </div>
     </div>
+    </nav>
   );
 }
 
