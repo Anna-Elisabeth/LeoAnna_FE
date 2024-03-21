@@ -23,7 +23,7 @@ function DeleteCustomer(props) {
                     <div className="row">
                         <button onClick={() => navigate("/customer/edit/" + props.id)} style={{ width: "100px", margin: "10px" }} className="btn btn-warning" id="edit">Edit</button>
                         <button style={{ width: "100px", margin: "10px" }} className="btn btn-danger" onClick={deleteCustomer} id="delete">Delete</button>
-                        <button onClick={() => navigate("/customer/get/" + props.id)} style={{ width: "100px", margin: "10px" }} className="btn btn-success" >Basket</button>
+                        {/* <button onClick={() => navigate("/customer/get/" + props.id)} style={{ width: "100px", margin: "10px" }} className="btn btn-success" >Basket</button> */}
                     </div>
                 </div>
             </Card>

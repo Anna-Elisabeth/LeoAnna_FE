@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import CustomerAdmin from "./CustomerAdmin";
-import DisplayItems from "../Items/DisplayItems";
+
 
 import CustomerList from "../Customer/CustomerList";
+
+import DisplayAdminItems from "./DisplayAdminItems";
 
 function ItemAdmin (props) {
 
@@ -111,7 +112,7 @@ function ItemAdmin (props) {
 
   <div>
 
-  <DisplayItems items={items}  getItems={getItems}/> 
+  <DisplayAdminItems items={items}  getItems={getItems}/> 
   </div>
 
       <div>

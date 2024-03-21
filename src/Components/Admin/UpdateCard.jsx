@@ -6,12 +6,20 @@ import productImages from "../../productsImage.json"
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 
-function ItemCard(props) {
+function UpdateCard(props) {
 
   const params = useParams("");
   const [itemID, setItemID] = useState("");
   const navigate = useNavigate();
 
+
+  function deleteItem() {
+    axios.delete("http://localhost:8082/item/delete/" + props.id)
+      .then(response => { 
+        props.getItems() 
+      })
+      .catch(err => console.error(err))
+  }
 
   function getImageUrl(productName) {
     const productNameLower = productName.toLowerCase();
@@ -51,14 +59,18 @@ function ItemCard(props) {
           <p> {props.description}</p>
         </h4>
         <p>Price: £{props.price}</p>
-        <button style={{ marginTop: "10px", marginRight: "15px" }} className="btn btn-success btn-md" onClick={addToCart}>Add to Cart</button>
-       
-        
+        <button onClick={() =>
+          navigate("/items/edit/" + props.id)
+        } style={{ marginTop: "10px" }} type="submit" id="edit" className="btn btn-warning btn-md">
+          {" "}
+          Edit Item{" "}
+        </button>
+        <button style={{ marginTop: "10px" }} className="btn btn-danger" onClick={deleteItem}>Delete Item</button>
       </div>
     </Card>
   );
 }
-ItemCard.propTypes = {
+UpdateCard.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
@@ -68,4 +80,4 @@ ItemCard.propTypes = {
 
 
 
-export default ItemCard;
+export default UpdateCard;

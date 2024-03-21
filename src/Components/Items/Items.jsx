@@ -48,8 +48,6 @@ function Items (props) {
     return (  
         <div>
           <main>
-      
-
       <DisplayItems items={items}  getItems={getItems}/> 
       </main>
     </div>
