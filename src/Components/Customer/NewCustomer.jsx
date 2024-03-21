@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from 'axios';
 import { useNavigate, useParams } from "react-router-dom";
 
-function NewCust(props) {
+function NewCustomer(props) {
 
     const navigate = useNavigate();
     const params = useParams();
@@ -35,6 +35,7 @@ function NewCust(props) {
                     setUsername("");
                     setPassword("");
                     props.getCustomer();
+                    navigate("/");
                     
                     
                 }).catch(err => console.error(err))
@@ -113,7 +114,8 @@ function NewCust(props) {
                 />
                 <div className="mt-2">
                 {/* <label htmlFor="al">Submit Button:</label> */}
-                    <button className="btn btn-primary"  type="submit" id="al" aria-label="Submit Button">Submit</button>
+                    <button 
+             className="btn btn-primary"  type="submit" id="al" aria-label="Submit Button">Submit</button>
                 </div>
            
            
@@ -128,4 +130,4 @@ function NewCust(props) {
     );
 }
 
-export default NewCust;
+export default NewCustomer;

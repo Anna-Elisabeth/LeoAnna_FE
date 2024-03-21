@@ -78,9 +78,14 @@ function Basket(props) {
     }
 
     return (
-        <div><br></br>
+        <div>
+          
+          <header>
              <h2 class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ color: "white", fontFamily: "italic", width: "150px", backgroundColor: "#ffffff6b"}}>Basket: </h2>
-      <table className="table">
+             </header>
+             <main>
+      
+      <table className="table" aria-label="table">
         <thead>
           <tr>
             <th>Image</th>
@@ -110,14 +115,15 @@ function Basket(props) {
                   onChange={(newQuantity) => quantityChange(index, newQuantity)}
                 />
               </td>
-              <td class="text-decoration-underline"  style={{color: "blue"}}>£ {(basketItem.price * (basketItem.quantity || 0)).toFixed(2)}</td>
-              <td><button className="btn btn-primary" onClick={() => removeFromBasket(basketItem.id)}>Remove</button></td>
+              <td className="text-decoration-underline"  style={{color: "blue"}}>£ {(basketItem.price * (basketItem.quantity || 0)).toFixed(2)}</td>
+              <td><button className="btn btn-primary" aria-label="Remove" onClick={() => removeFromBasket(basketItem.id)}>Remove</button></td>
             </tr>
           ))}
         </tbody>
       </table><br></br>
-            <div><h2 class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ color: "Blue", fontFamily: "italic", width: "350px", backgroundColor: "#ffffff6b"}}>Basket Total : £{basketTotal}</h2></div>
-            <button onClick={handleConfetti} className="btn btn-primary" type="submit">Checkout</button>
+            <div><h2 className="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ color: "Blue", fontFamily: "italic", width: "350px", backgroundColor: "#ffffff6b"}}>Basket Total : £{basketTotal}</h2></div>
+            <button onClick={handleConfetti} className="btn btn-primary" type="submit" aria-label="Checkout">Checkout</button>
+            </main>
         </div>
     );
 }

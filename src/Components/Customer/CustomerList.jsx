@@ -1,6 +1,6 @@
 import DeleteCustomer from "./DeleteCustomer";
 
-function CustomerDisplay(props) {
+function CustomerList(props) {
     const customerList = []
     for (const customer of props.listCustomer) {
         console.log("Customer:", customer);
@@ -25,4 +25,4 @@ return (
 )
 }
 
-export default CustomerDisplay;
+export default CustomerList;
