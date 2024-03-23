@@ -45,7 +45,7 @@ function UpdateCard(props) {
   }
 
   return (
-    <Card style={{ width: "300px" }} className="col-sm-6 col-md-4 col-lg-3 m-4">
+    <Card style={{ width: "300px", fontFamily: "Verdana, sans-serif" }} className="col-sm-6 col-md-4 col-lg-3 m-4">
       <div className="card-body ">
         <h4 className="card-title">
           {" "}
@@ -57,8 +57,9 @@ function UpdateCard(props) {
           />
           <p> {props.name}</p>
           <p> {props.description}</p>
-        </h4>
+       
         <p>Price: £{props.price}</p>
+        </h4>
         <button onClick={() =>
           navigate("/items/edit/" + props.id)
         } style={{ marginTop: "10px" }} type="submit" id="edit" className="btn btn-warning btn-md">

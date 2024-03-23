@@ -16,7 +16,7 @@ function DeleteCustomer(props) {
     return (
         
         <div className="col-12 col-md-6 col-lg-4 my-2">
-            <Card style={{  width: "250px" }}>
+            <Card style={{  marginLeft:"50px", width: "250px" }}>
                 <div className="card-body" >
                     <img style={{ width: '50%' }} src="/Customer.PNG" alt="" />
                     <h4>{props.username}</h4>

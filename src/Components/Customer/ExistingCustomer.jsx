@@ -36,10 +36,10 @@ function ExistingCustomer(props) {
     <form onSubmit={handleSubmit}>
 
       <br/>
-      <h2 className="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ color: "white", fontFamily: "italic", width: "150px", backgroundColor: "#ffffff6b" }}>Login</h2>
-      <div className="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ marginTop: "50px", marginLeft: "50px", backgroundColor: "#ffffff6b", width: "350px" }}>
+      <h2 className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", width: "150px", backgroundColor: "#365074" }}>Login</h2>
+      <div className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", fontSize: "20px",  marginTop: "50px", marginLeft: "50px", backgroundColor: "#365074", width: "350px" }}>
         <br/><label htmlFor="username">Username</label>
-        <br/><input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
+        <br/><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                    id="username"
                    username="username"
                    type="text"
@@ -48,7 +48,7 @@ function ExistingCustomer(props) {
                    required
         />
         <br/><label htmlFor="password">Password</label>
-        <br/><input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
+        <br/><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px"}}
                    id="password"
                    password="password"
                    type="password"
@@ -57,7 +57,10 @@ function ExistingCustomer(props) {
                    required
         />
         <div className="mt-2">
-          <button type="submit" className="btn btn-primary btn-md"> Login </button>
+          <button type="submit" className="btn btn-dark btn-lg"> Login </button>
+          <button type="submit" className="btn btn-light btn-lg"> Login </button>
+
+
         </div>
       </div>
     </form>

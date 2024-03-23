@@ -3,12 +3,14 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
+.border-color {color: #0E161F}
 
-.background-image { opacity: 0.5; }
+
+.background-image { opacity: 0.1; }
 
 .homeimage {
   background: url("../public/Logo2.png");

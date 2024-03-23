@@ -47,10 +47,10 @@ function ItemCard(props) {
             className="card-person"
             style={{ maxWidth: '50%', height: '50%' }}
           />
-          <p> {props.name}</p>
-          <p> {props.description}</p>
-        </h4>
+          <p>Product: {props.name}</p>
+          <p>Description: {props.description}</p>
         <p>Price: £{props.price}</p>
+        </h4>
         <button style={{ marginTop: "10px", marginRight: "15px" }} className="btn btn-success btn-md" onClick={addToCart}>Add to Cart</button>
        
         

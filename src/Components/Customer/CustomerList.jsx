@@ -19,7 +19,7 @@ function CustomerList(props) {
     }
 
 return (
-    <div class="">
+    <div className="">
         <div className="row">{customerList}</div>
     </div>
 )
