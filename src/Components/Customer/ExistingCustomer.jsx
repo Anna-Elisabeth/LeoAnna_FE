@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from 'axios';
 import { useNavigate, useParams } from "react-router-dom";
+import Modal from "./Modal"; // Assuming Modal is in the same directory
 
 function ExistingCustomer(props) {
 
@@ -9,27 +10,36 @@ function ExistingCustomer(props) {
   const navigate = useNavigate();
   const params = useParams();
 
+  const [showModal, setShowModal] = useState(false); // State for modal visibility
+  const [modalMessage, setModalMessage] = useState(""); // State for modal content
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Form validation (optional)
 
     try {
-      const response = await axios.get("http://localhost:8082/customer/get"); // Replace with your API endpoint
+      const response = await axios.get("http://localhost:8082/customer/get"); 
       const existingUsers = response.data;
       const exists = existingUsers.some(user => user.username === username && user.password === password);
 
       if (exists) {
         navigate("/items"); // Navigate to the items page on successful login
-        alert(`Welcome to Everest, ${username}`);
+        setModalMessage(`Welcome to Everest, ${username}`);
+        setShowModal(true); // Show modal on successful login
       } else {
-        alert("No account found. Please register.");
+        setModalMessage("No account found. Please register.");
+        setShowModal(true); // Show modal on failed login
         navigate("/customer");
       }
     } catch (err) {
       console.error(err); // Handle potential errors during API call
-      alert("An error occurred. Please try again."); // Inform user about the error
+      setModalMessage("An error occurred. Please try again.");
+      setShowModal(true); // Show modal on error
     }
+
+     {/* Render the Modal component conditionally based on showModal state */}
+     {showModal && <Modal message={modalMessage} onClose={() => setShowModal(true)} />}
   };
 
   return (
@@ -57,13 +67,14 @@ function ExistingCustomer(props) {
                    required
         />
         <div className="mt-2">
-          <button type="submit" className="btn btn-dark btn-lg"> Login </button>
+         
           <button type="submit" className="btn btn-light btn-lg"> Login </button>
-
-
         </div>
+       
       </div>
     </form>
+
+    
   );
 }
 
