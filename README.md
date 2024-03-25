@@ -1,10 +1,11 @@
-# Dolphinity - Open Source React.js Accessible E-Commerce API
+# Dolphinity - Open Source React.js Accessible E-Commerce Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This project is build on top of Open Source code (Front-End link: https://github.com/Liliano-Balde/Everest_FE, Back-End link: https://github.com/Craigm84/Everest_BE).
+The project remit is to fix bugs, find/make improvements and add features.
 
-In the project directory, you can run:
+### `npm start`
 
 ### `npm start`
 
