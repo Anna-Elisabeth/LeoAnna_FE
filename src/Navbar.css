@@ -1,6 +1,7 @@
 
 .main-navbar {
     border-bottom: 1px solid #ccc;
+    background-color: #13428c;
 }
 
 .main-navbar .top-navbar {
@@ -10,11 +11,11 @@
 }
 
 .main-navbar .top-navbar .brand-name {
-    color: #fff;
+    color: #3e47c6;
 }
 
 .main-navbar .top-navbar .nav-link {
-    color: #fff;
+    color: #3f2c92;
     font-size: 16px;
     font-weight: 500;
 }
@@ -39,7 +40,7 @@
 
 .main-navbar .navbar {
     padding: 0px;
-    background-color: #ddd;
+    background-color: #3b3dc2;
 }
 
 .main-navbar .navbar .nav-item .nav-link {

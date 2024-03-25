@@ -4,18 +4,13 @@ import { useParams } from "react-router-dom";
 import Counter from "./Counter";
 import productImages from "../../productsImage.json";
 import { useNavigate } from "react-router-dom";
-import confetti from "canvas-confetti";
+
 
 function Basket(props) {
     const params = useParams();
     const [basket, setBasket] = useState([]);
     const navigate = useNavigate();
-    const handleConfetti = () => {
-      confetti({
-        particleCount: 500,
-        spread: 320,
-      });
-    };
+  
 
     useEffect(() => {
       getCustomer();
@@ -46,7 +41,7 @@ function Basket(props) {
     // <div className="col-1 text-right">£{taxPrice.toFixed(2)}</div>
     const basketItems = basket.map((basketItem, index) => (
 
-        <div className="d-inline-flex" style={{ maxWidth: "20%", margin: "20px" }} key={index}>
+        <div className="d-inline-flex" style={{ maxWidth: "20%", margin: "20px", fontFamily: "Verdana, sans-serif" }} key={index}>
             <div className="card">
                 <div className="card-body">
                     <img
@@ -81,11 +76,11 @@ function Basket(props) {
         <div>
           
           <header>
-             <h2 class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ color: "white", fontFamily: "italic", width: "150px", backgroundColor: "#ffffff6b"}}>Basket: </h2>
+             <h2 class="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white",  fontFamily: "Verdana, sans-serif", backgroundColor: "#365074", width: "150px"}}>Basket: </h2>
              </header>
              <main>
       
-      <table className="table" aria-label="table">
+      <table className="table" aria-label="table" style={{fontFamily: "Verdana, sans-serif", fontSize: "20px" }}>
         <thead>
           <tr>
             <th>Image</th>
@@ -121,8 +116,9 @@ function Basket(props) {
           ))}
         </tbody>
       </table><br></br>
-            <div><h2 className="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ color: "Blue", fontFamily: "italic", width: "350px", backgroundColor: "#ffffff6b"}}>Basket Total : £{basketTotal}</h2></div>
-            <button onClick={handleConfetti} className="btn btn-primary" type="submit" aria-label="Checkout">Checkout</button>
+            <div><h2 className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{  color: "white",  fontFamily: "Verdana, sans-serif", backgroundColor: "#365074", width: "350px"}}>Basket Total : £{basketTotal}</h2></div>
+           
+            <button className="btn btn-primary btn-lg" type="button" onClick={() => navigate('/checkout')} aria-label="Checkout">Checkout</button>
             </main>
         </div>
     );
