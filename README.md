@@ -27,7 +27,12 @@ The project remit is to fix bugs, find/make improvements and add features.
     - Rebranding and revamp of styling to meet industry accessibility standards, and to make accessibility the focus of our application
 
 ### Contribuitions and ongoing development
-  - Working towads a WCAG
+  This project remains Open Source and all contribuitions/suggestions are welcome, with a focus on:
+  - Working towards WCAG 2.1 Level AA standard
+  - Improve user authentication
+  - Search bar functionality
+  - Full separation between user types (different users have their respective logins and baskets)
+  - Mobile friendly features
 
 ### `npm start`
 
