@@ -8,19 +8,19 @@ For end-to-end functionality, please also refer to our Back-End repository https
 
 The project remit is to fix bugs, find/make improvements and add features.
 
-### Key features
-- Minor improvements:
+### Key Features
+- Minor Improvements:
   - Basket totals fixed to two decimal places
   - Fixed item update bug, where description update field refered to item name input field
   - Checkout page added
   - Addressed minor errors flagged in console
   - Updated component name conventions for consistency
 
-- Major improvements:
+- Major Improvements:
   - Improved login functionality
   - Admin and basket interfaces updated for better organisation.
  
-- New features:
+- New Features:
   - Accessibility:
     - Aria and HTML5 landmarks applied
     - Utilisation of `react-axe`
@@ -29,16 +29,20 @@ The project remit is to fix bugs, find/make improvements and add features.
     - Implementation of industry standard accessible font Verdana (sans serif)
     - Rebranding and revamp of styling to meet industry accessibility standards, and to make accessibility the focus of our application
 
-### Contribuitions and ongoing development
+### Contribuitions and Ongoing Development
   This project remains Open Source and all contribuitions/suggestions are welcome, with a focus on:
   - Working towards WCAG 2.1 Level AA standard
   - Improve user authentication
   - Search bar functionality
   - Full separation between user types (different users have their respective logins and baskets)
   - Mobile friendly features
-  To contribute, please note, our preferred workflow is the fork-pull request model
+  To contribute, please note, our preferred workflow is the fork-pull request model.
 
-
+### Getting Started
+  - Front-End Prerequisites:
+    - Node.js and npm
+    - Text Editor or IDE
+    - Version Control (e.g. Git)
 
 ### `npm start`
 
