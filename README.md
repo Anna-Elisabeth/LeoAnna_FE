@@ -2,7 +2,8 @@
 
 ## Description
 
-This project is build on top of Open Source code (Front-End link: https://github.com/Liliano-Balde/Everest_FE, Back-End link: https://github.com/Craigm84/Everest_BE).
+This project is build on top of Open Source code, this repository contains our Front-End code and is built on https://github.com/Liliano-Balde/Everest_FE.
+For end-to-end functionality, please also refer to our Back-End repository https://github.com/Anna-Elisabeth/LeoAnna_BE, which is built on https://github.com/Craigm84/Everest_BE.
 The project remit is to fix bugs, find/make improvements and add features.
 
 ### Key features
@@ -33,6 +34,9 @@ The project remit is to fix bugs, find/make improvements and add features.
   - Search bar functionality
   - Full separation between user types (different users have their respective logins and baskets)
   - Mobile friendly features
+  To contribute, please note, our preferred workflow is the fork-pull request model
+
+
 
 ### `npm start`
 
