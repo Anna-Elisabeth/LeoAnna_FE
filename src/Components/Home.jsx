@@ -1,9 +1,10 @@
 import ExistingCustomer from "./Customer/ExistingCustomer";
-
+import Modal from "./Customer/Modal";
+import { useState } from "react";
 
 function Home() {
 
-
+    const [openModal, setOpenModal] = useState(false);
     return (
         <div style={{ position: "absolute", top: "100px", bottom: "0px", left: "50px", right: "50px", margin: "auto"}}>
 <header role="banner">
@@ -16,7 +17,24 @@ function Home() {
 
        <main role="main">
        
+     
+
+       {/* <div>
+      <button 
+      onClick={() => setOpenModal(true)} 
+      className='modalButton'>
+        Modal
+      </button>
+      <Modal 
+      open={openModal} 
+
+      onClose={() => setOpenModal(false)} />
+      </div> */}
+
+       <br/>
+
        <ExistingCustomer/>
+       
        </main>
         </div>
     );

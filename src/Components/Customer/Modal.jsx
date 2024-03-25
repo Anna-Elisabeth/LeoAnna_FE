@@ -1,33 +1,34 @@
-const Modal = ({ message, onClose }) => {
-    return (
+import Logo5 from "./Logo5.png";
+import './Modal.css';
+
+const Modal = ({ open, onClose, message, onNavigate }) => {
+  if (!open) return null;
+
+  return (
+    <div onClick={onClose} className='overlay'>
       <div
-        className="modal"
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)', // Transparent black background
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center', // Center the modal content vertically and horizontally
+        onClick={(e) => {
+          e.stopPropagation();
         }}
+        className='modalContainer'
       >
-        <div
-          className="modal-content"
-          style={{
-            backgroundColor: '#fff',
-            padding: '20px',
-            border: '1px solid #888',
-            borderRadius: '4px',
-          }}
-        >
-          <p>{message}</p>
-          <button onClick={onClose}>Close</button>
+        <img src={Logo5} alt='dolphinity logo' />
+        <div className='modalRight'>
+          <p className='closeBtn' onClick={onClose}>
+            X
+          </p>
+          <div className='content' style={{ fontSize: "20px", fontFamily: "Verdana, sans-serif", fontWeight: "bold"  }}>
+            {message} {/* Dynamically display the message */}
+          </div>
+          <div className='btnContainer'>
+            <button className='btnPrimary' onClick={onNavigate}>
+              <span className='bold'>Continue</span>
+            </button>
+          </div>
         </div>
       </div>
-    );
-  };
-  
-  export default Modal;
+    </div>
+  );
+};
+
+export default Modal;
