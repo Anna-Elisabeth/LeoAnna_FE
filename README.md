@@ -17,7 +17,8 @@ The project remit is to fix bugs, find/make improvements and add features.
   - Accessibility:
     - Aria and HTML5 landmarks applied
     - Utilisation of `react-axe`
-    - Utilisation of Microsoft Accessibility Insights [extenstion](https://microsoftedge.microsoft.com/addons/detail/accessibility-insights-fo/ghbhpcookfemncgoinjblecnilppimih)
+    - [Utilisation of Microsoft Accessibility Insights Edge Extension](https://microsoftedge.microsoft.com/addons/detail/accessibility-insights-fo/ghbhpcookfemncgoinjblecnilppimih)
+    - [Utilisation of Microsoft Accessibility Insights for Windows Software]([https://microsoftedge.microsoft.com/addons/detail/accessibility-insights-fo/ghbhpcookfemncgoinjblecnilppimih](https://accessibilityinsights.io/downloads/))
 
 ### `npm start`
 
