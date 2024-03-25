@@ -19,6 +19,8 @@ The project remit is to fix bugs, find/make improvements and add features.
     - Utilisation of `react-axe`
     - [Utilisation of Microsoft Accessibility Insights Edge Extension](https://microsoftedge.microsoft.com/addons/detail/accessibility-insights-fo/ghbhpcookfemncgoinjblecnilppimih)
     - [Utilisation of Microsoft Accessibility Insights for Windows Software](https://accessibilityinsights.io/downloads/)
+    - Implementation of industry standard accessible font Verdana (sans serif)
+    - Rebranding and revamp of styling to meet industry accessibility standards, and to make accessibility the focus of our application
 
 ### `npm start`
 
