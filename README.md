@@ -16,6 +16,9 @@ The project remit is to fix bugs, find/make improvements and add features.
   - Addressed minor errors flagged in console
   - Updated component name conventions for consistency
 
+### Additional Documentation
+  - To understand the structure and behaviour of our APIs, please refer to our Swagger documentation link http://localhost:8082/swagger-ui/index.html#/
+
 - Major Improvements:
   - Improved login functionality
   - Admin and basket interfaces updated for better organisation.
