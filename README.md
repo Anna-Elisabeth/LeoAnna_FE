@@ -27,7 +27,7 @@ The project remit is to fix bugs, find/make improvements and add features.
     - Rebranding and revamp of styling to meet industry accessibility standards, and to make accessibility the focus of our application
 
 ### Contribuitions and ongoing development
-
+  - Working towads a WCAG
 
 ### `npm start`
 
