@@ -63,7 +63,7 @@ function ExistingCustomer(props) {
                    required
         />
         <div className="mt-2">
-          <button type="submit" className="btn btn-dark btn-lg"> Login </button>
+          {/* <button type="submit" className="btn btn-dark btn-lg"> Login </button> */}
           <button type="submit" className="btn btn-light btn-lg"> Login </button>
         </div>
       </div>
