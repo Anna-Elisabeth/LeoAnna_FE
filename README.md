@@ -8,6 +8,10 @@ The project remit is to fix bugs, find/make improvements and add features.
 ### Key features
 - Minor improvements:
   - Basket totals fixed to two decimal places
+  - Fixed item update bug, where description update field refered to item name input field
+  - Checkout page added
+  - Addressed minor errors flagged in console
+  - Updated component name conventions for consistency
 
 - Major improvements:
   - Improved login functionality
@@ -21,6 +25,9 @@ The project remit is to fix bugs, find/make improvements and add features.
     - [Utilisation of Microsoft Accessibility Insights for Windows Software](https://accessibilityinsights.io/downloads/)
     - Implementation of industry standard accessible font Verdana (sans serif)
     - Rebranding and revamp of styling to meet industry accessibility standards, and to make accessibility the focus of our application
+
+### Contribuitions and ongoing development
+
 
 ### `npm start`
 
