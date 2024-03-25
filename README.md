@@ -38,6 +38,10 @@ The project remit is to fix bugs, find/make improvements and add features.
   - Mobile friendly features
   To contribute, please note, our preferred workflow is the fork-pull request model.
 
+### Current Contributors
+  - https://github.com/Anna-Elisabeth
+  - https://github.com/Liliano-Balde
+
 ### Getting Started
   - Front-End Prerequisites:
     - Node.js and npm
