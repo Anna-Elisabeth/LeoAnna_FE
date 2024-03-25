@@ -6,12 +6,17 @@ This project is build on top of Open Source code (Front-End link: https://github
 The project remit is to fix bugs, find/make improvements and add features.
 
 ### Key features
-- Minor changes:
+- Minor improvements:
   - Basket totals fixed to two decimal places
 
-- Major changes:
+- Major improvements:
   - Improved login functionality
-  - Admin and basket interfaces updated for better organisation. 
+  - Admin and basket interfaces updated for better organisation.
+ 
+- New features:
+  - Accessibility:
+    - Aria and HTML5 landmarks applied
+    - Utilisation of `react-axe`
 
 ### `npm start`
 
