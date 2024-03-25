@@ -5,7 +5,13 @@
 This project is build on top of Open Source code (Front-End link: https://github.com/Liliano-Balde/Everest_FE, Back-End link: https://github.com/Craigm84/Everest_BE).
 The project remit is to fix bugs, find/make improvements and add features.
 
-### `npm start`
+### Key features
+- Minor changes:
+  - Basket totals fixed to two decimal places
+
+- Major changes:
+  - Improved login functionality
+  - Admin and basket interfaces updated for better organisation. 
 
 ### `npm start`
 
