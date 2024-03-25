@@ -35,6 +35,7 @@ function NewCustomer(props) {
                     setUsername("");
                     setPassword("");
                     props.getCustomer();
+                    alert("Registered! Redirecting to the login page")
                     navigate("/");
                     
                     

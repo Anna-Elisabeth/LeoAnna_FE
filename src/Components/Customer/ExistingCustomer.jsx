@@ -15,6 +15,12 @@ function ExistingCustomer(props) {
     // Form validation (optional)
 
     try {
+
+      if (username === "admin" && password === "admin") {
+        navigate("/admin");
+        alert("Welcome Admin!");
+        return;
+      }
       const response = await axios.get("http://localhost:8082/customer/get"); // Replace with your API endpoint
       const existingUsers = response.data;
       const exists = existingUsers.some(user => user.username === username && user.password === password);
@@ -59,8 +65,6 @@ function ExistingCustomer(props) {
         <div className="mt-2">
           <button type="submit" className="btn btn-dark btn-lg"> Login </button>
           <button type="submit" className="btn btn-light btn-lg"> Login </button>
-
-
         </div>
       </div>
     </form>

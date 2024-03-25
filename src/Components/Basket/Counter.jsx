@@ -10,7 +10,7 @@ function Counter({ value, onChange }) {
     }, [value]);
 
     const incrementCount = () => {
-        if (count < 10) {
+        if (count < 100) {
             setCount(count + 1);
             onChange(count + 1);
         }

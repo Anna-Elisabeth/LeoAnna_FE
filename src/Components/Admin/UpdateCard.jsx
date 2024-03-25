@@ -62,11 +62,11 @@ function UpdateCard(props) {
         </h4>
         <button onClick={() =>
           navigate("/items/edit/" + props.id)
-        } style={{ marginTop: "10px" }} type="submit" id="edit" className="btn btn-warning btn-md">
+        } style={{ marginTop: "10px" }} type="submit" id="edititem" aria-label="edit item" className="btn btn-warning btn-md">
           {" "}
           Edit Item{" "}
         </button>
-        <button style={{ marginTop: "10px" }} className="btn btn-danger" onClick={deleteItem}>Delete Item</button>
+        <button style={{ marginTop: "10px" }} className="btn btn-danger" aria-label="delete item" onClick={deleteItem}>Delete Item</button>
       </div>
     </Card>
   );
