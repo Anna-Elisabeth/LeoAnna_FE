@@ -37,7 +37,6 @@ function Items (props) {
                 console.log(response)
                 for (const items of response.data) {
                     if (items.name.toLowerCase() === name.toLowerCase() && items.price.toLowerCase() === price.toLowerCase()) {
-                             alert("Item already exists")
                          return;    
                     }
                 }

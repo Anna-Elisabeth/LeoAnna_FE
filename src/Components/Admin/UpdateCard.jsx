@@ -102,7 +102,7 @@ function UpdateCard(props) {
 UpdateCard.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   quantity: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired
 };

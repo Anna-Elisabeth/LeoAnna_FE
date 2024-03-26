@@ -99,7 +99,7 @@ function EditCustomer() {
                     required
                 />
                 <div className="mt-2">
-                    <button className="btn btn-primary" id="update" type="submit">Update</button>
+                    <button className="btn btn-light btn-lg" id="update" type="submit">Update</button>
                 </div>
             </div>
         </form>
