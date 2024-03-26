@@ -127,7 +127,7 @@ function NewCustomer(props) {
                     <div className="mt-2">
                         {/* <label htmlFor="al">Submit Button:</label> */}
                         <button
-                            className="btn btn-dark" type="submit" id="al" aria-label="Submit Button">Submit</button>
+                            className="btn btn-light btn-lg" type="submit" id="al" aria-label="Submit Button">Submit</button>
                     </div>
 
 
