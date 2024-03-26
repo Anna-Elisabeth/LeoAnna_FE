@@ -18,7 +18,8 @@ The project remit is to fix bugs, find/make improvements and add features.
 
 - Major Improvements:
   - Improved login functionality
-  - Admin and basket interfaces updated for better organisation.
+  - Admin and basket interfaces updated for better organisation
+  - Admin login and navigate to Admin page
  
 - New Features:
   - Accessibility:
@@ -28,6 +29,7 @@ The project remit is to fix bugs, find/make improvements and add features.
     - [Utilisation of Microsoft Accessibility Insights for Windows Software](https://accessibilityinsights.io/downloads/)
     - Implementation of industry standard accessible font Verdana (sans serif)
     - Rebranding and revamp of styling to meet industry accessibility standards, and to make accessibility the focus of our application
+    - Alerts replaced with Modals
 
 ### Additional Documentation
   - To understand the structure and behaviour of our APIs, please refer to our Swagger documentation link http://localhost:8082/swagger-ui/index.html#/
