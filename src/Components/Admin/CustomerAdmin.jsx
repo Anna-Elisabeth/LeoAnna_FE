@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useEffect,useState } from "react";
-import NewCustomer from "./NewCustomer";
-import CustomerDisplay from "./CustomerList";
 
-function Customers(props) {
+import CustomerList from "../Customer/CustomerList";
+
+function CustomerAdmin(props) {
     
     function getCustomer() {
         axios.get("http://localhost:8082/customer/get")
@@ -15,10 +15,10 @@ function Customers(props) {
 
     return (
         <div >   
-            <div><NewCustomer getCustomer={getCustomer}/></div>
+            {/* <div><NewCustomer getCustomer={getCustomer}/></div> */}
             <br></br>
-            {/* <div><CustomerDisplay listCustomer={customers} getCustomer={getCustomer} /></div> */}
+            <div><CustomerList listCustomer={customers} getCustomer={getCustomer} /></div>
         </div>);
 }
 
-export default Customers;
+export default CustomerAdmin;

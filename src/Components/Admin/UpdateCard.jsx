@@ -8,12 +8,20 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import Modal from "../Customer/Modal";
 
-function ItemCard(props) {
+function UpdateCard(props) {
   const params = useParams("");
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
   const [itemID, setItemID] = useState("");
   const navigate = useNavigate();
+
+  function deleteItem() {
+    axios.delete("http://localhost:8082/item/delete/" + props.id)
+      .then(response => { 
+        props.getItems() 
+      })
+      .catch(err => console.error(err))
+  }
 
   function getImageUrl(productName) {
     const productNameLower = productName.toLowerCase();
@@ -45,12 +53,13 @@ function ItemCard(props) {
 
   const handleNavigate = () => {
     navigate("/items"); // Navigate to items page after adding to cart
-    setShowModal(false); // Close the modal
   };
 
   return (
+
+
     <>
-      <Card style={{ width: "300px" }} className="col-sm-6 col-md-4 col-lg-3 m-4">
+      <Card style={{ width: "300px", fontFamily: "Verdana, sans-serif" }} className="col-sm-6 col-md-4 col-lg-3 m-4">
         <div className="card-body ">
           <h4 className="card-title">
             {" "}
@@ -60,11 +69,20 @@ function ItemCard(props) {
               className="card-person"
               style={{ maxWidth: '50%', height: '50%' }}
             />
-            <p>Product: {props.name}</p>
-            <p>Description: {props.description}</p>
+            <p> {props.name}</p>
+            <p> {props.description}</p>
+
           <p>Price: £{props.price}</p>
           </h4>
-          <button style={{ marginTop: "10px", marginRight: "15px" }} className="btn btn-success btn-md" onClick={addToCart}>Add to Cart</button>
+          <button onClick={() =>
+            navigate("/items/edit/" + props.id)
+          } style={{ marginTop: "10px" }} type="submit"  id="edititem" aria-label="edit item" className="btn btn-warning btn-md">
+            {" "}
+            Edit Item{" "}
+          </button>
+          
+ <button style={{ marginTop: "10px" }} className="btn btn-danger" aria-label="delete item" onClick={deleteItem}>Delete Item</button>
+        
         </div>
       </Card>
 
@@ -78,9 +96,10 @@ function ItemCard(props) {
         />
       )}
     </>
+
   );
 }
-ItemCard.propTypes = {
+UpdateCard.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
@@ -88,4 +107,4 @@ ItemCard.propTypes = {
   description: PropTypes.string.isRequired
 };
 
-export default ItemCard;
+export default UpdateCard;

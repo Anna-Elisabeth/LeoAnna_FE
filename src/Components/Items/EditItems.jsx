@@ -35,7 +35,7 @@ function EditItems() {
       })
 
       .then(() => {
-        navigate("/items");
+        navigate("/admin");
       })
       .catch((error) => console.error(error));
   };
@@ -46,8 +46,10 @@ function EditItems() {
       <form onSubmit={handleSubmit}>
 
         {" "}
-        <h1>Items &nbsp;</h1>
-        <div class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ marginTop: "50px", marginLeft: "50px", backgroundColor: "#ffffff6b", width: "350px" }}>
+        
+
+        <h1 className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{marginLeft:"50px", marginTop:"50px", width: "250px", height: "100px", color: "white", fontFamily: "Verdana, sans-serif", backgroundColor: "#365074"}} >Edit Items &nbsp;</h1>
+        <div className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color:"white", fontSize: "20px", marginTop: "50px", marginLeft: "50px", fontFamily: "Verdana, sans-serif", backgroundColor: "#365074", width: "350px" }}>
           <div className="input-container">
             <label htmlFor="fn">Name &nbsp;</label>
             <input
@@ -62,7 +64,7 @@ function EditItems() {
             <input
               value={description}
               br
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setDescription(e.target.value)}
               id="idescup"
               type="text"
               className="form-control"
@@ -84,6 +86,7 @@ function EditItems() {
               class="form-control"
             />
           </div>
+          <br/>
           <button type="submit" className="btn btn-success btn-md">
             Update
           </button>

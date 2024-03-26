@@ -1,12 +1,12 @@
-import ItemCard from "./ItemCard";
+import UpdateCard from "./UpdateCard";
 
 
-function DisplayItems(props) {
+function DisplayAdminItems(props) {
 
   const itemArray = [];
   for (const item of props.items) {
     itemArray.push(
-      <ItemCard
+      <UpdateCard
         key={item.name + " " + item.quantity}
         id={item.id}
         name={item.name}
@@ -29,4 +29,4 @@ function DisplayItems(props) {
 }
 
 
-export default DisplayItems; 
+export default DisplayAdminItems; 

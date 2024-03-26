@@ -12,6 +12,8 @@ import EditCustomer from './Components/Customer/EditCustomer';
 import Basket from './Components/Basket/Basket';
 import LoginCustomer from './Components/Customer/ExistingCustomer';
 import Home from './Components/Home';
+import ItemAdmin from './Components/Admin/ItemAdmin';
+import Payment from './Components/Basket/Payment';
 
 
 function App() {
@@ -24,7 +26,8 @@ function App() {
       <Routes>
         <Route path='/'element={<Home />} />
         <Route path='/items' element={<Items />} />
-        <Route path='/customer/get/' element={<LoginCustomer/>} />
+        <Route path='/admin' element={<ItemAdmin/>} />
+        <Route path='/checkout' element={<Payment/>} />
         <Route path='/customer' element={<Customers />} />
         <Route path='/items/edit/:id' element={<EditItems />} />
         <Route path='/customer/edit/:id' element={<EditCustomer />} />

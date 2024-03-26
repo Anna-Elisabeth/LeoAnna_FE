@@ -34,7 +34,7 @@ function EditCustomer() {
             })
 
             .then(() => {
-                navigate("/customer");
+                navigate("/admin");
             })
             .catch((error) => console.error(error));
     };
@@ -42,10 +42,10 @@ function EditCustomer() {
     return (
         <form onSubmit={handleSubmit}>
             <br />
-            <h1 style={{ color: "white", fontFamily: "italic" }}>Update Customer Details</h1>
-            <div class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ marginTop: "50px", marginLeft: "50px", backgroundColor: "#ffffff6b", width: "350px" }}>
+            <h1 className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{marginLeft:"50px", marginTop:"50px", width: "550px", height: "100px", color: "white", fontFamily: "Verdana, sans-serif", backgroundColor: "#365074"}} >Update Customer Details &nbsp;</h1>
+            <div className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color:"white", fontSize: "20px", marginTop: "50px", marginLeft: "50px", fontFamily: "Verdana, sans-serif", backgroundColor: "#365074", width: "350px" }}>
                 <label htmlFor="name">Name</label>
-                <br /><input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
+                <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                     id="name"
                     name="name"
                     type="text"
@@ -54,7 +54,7 @@ function EditCustomer() {
                     required
                 />
                 <br /><label htmlFor="address">Address</label>
-                <br /><input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
+                <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                     id="address"
                     address="address"
                     type="text"
@@ -63,7 +63,7 @@ function EditCustomer() {
                     required
                 />
                 <br /><label htmlFor="email">Email</label>
-                <br /><input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
+                <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                     id="email"
                     email="email"
                     type="text"
@@ -72,7 +72,7 @@ function EditCustomer() {
                     required
                 />
                 <br /><label htmlFor="phone">Phone</label>
-                <br /><input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
+                <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                     id="phone"
                     phone="phone"
                     type="text"
@@ -81,7 +81,7 @@ function EditCustomer() {
                     required
                 />
                 <br /><label htmlFor="username">Username</label>
-                <br /><input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
+                <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                     id="username"
                     username="username"
                     type="text"
@@ -90,7 +90,7 @@ function EditCustomer() {
                     required
                 />
                 <br /><label htmlFor="password">Password</label>
-                <br /><input className="form-control border-3 border-primary rounded" style={{ width: "250px", height: "31px" }}
+                <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                     id="password"
                     password="password"
                     type="password"

@@ -1,11 +1,41 @@
+import ExistingCustomer from "./Customer/ExistingCustomer";
+import Modal from "./Customer/Modal";
+import { useState } from "react";
+
 function Home() {
 
-
+    const [openModal, setOpenModal] = useState(false);
     return (
         <div style={{ position: "absolute", top: "100px", bottom: "0px", left: "50px", right: "50px", margin: "auto"}}>
-            <h2 class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ maxWidth: "1500px", fontStyle: "italic", fontWeight: "bold", textAlign: "center", color: "Black", fontFamily: "italic", backgroundColor: "#ffffff6b" }}>As a well known CEO once said - "This is not only the largest river in the world, it's many times larger than the next biggest river. It blows all other rivers away." </h2>
+<header role="banner">
+          <h1 className="border   border-dark p-4 mb-6 border-5 border-dark rounded" style={{ maxWidth: "1500px",  fontWeight: "bold", textAlign: "center", color: "white", fontFamily: "Verdana, sans-serif", backgroundColor: "#365074", marginTop: "80px", marginBottom: "80px" }}>"An accessible web is a wave everyone can ride." -  Flipper, the Finclusive Dolphin </h1>
+          
 
-            <h2 class="border border-primary p-2 mb-2 border-4 border-primary rounded" style={{ marginTop: "50px", maxWidth: "1500px", fontStyle: "italic", fontWeight: "bold", textAlign: "center", color: "Black", fontFamily: "italic", backgroundColor: "#ffffff6b" }}>  The CEO's of Everest declared that - "This is not only the largest Mountain in the world, it's many times larger than the next biggest mountain. It blows all other mountains away."  </h2>
+            
+       
+       </header>
+
+       <main role="main">
+       
+     
+
+       {/* <div>
+      <button 
+      onClick={() => setOpenModal(true)} 
+      className='modalButton'>
+        Modal
+      </button>
+      <Modal 
+      open={openModal} 
+
+      onClose={() => setOpenModal(false)} />
+      </div> */}
+
+       <br/>
+
+       <ExistingCustomer/>
+       
+       </main>
         </div>
     );
 }
