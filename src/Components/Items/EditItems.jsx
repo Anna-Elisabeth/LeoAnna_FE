@@ -64,7 +64,7 @@ function EditItems() {
             <input
               value={description}
               br
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setDescription(e.target.value)}
               id="idescup"
               type="text"
               className="form-control"

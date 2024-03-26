@@ -109,7 +109,7 @@ function ItemAdmin (props) {
             type="text"            
           />
           <br></br>
-          <button className="btn btn-light btn-lg" type="submit">Submit</button>
+          <button className="btn btn-light btn-lg" aria-label="submit button" type="submit">Submit</button>
         </div>
         <br />
       </form>

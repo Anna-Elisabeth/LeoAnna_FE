@@ -16,12 +16,7 @@ function ExistingCustomer() {
     
 
     try {
-      const response = await axios.get("http://localhost:8082/customer/get"); 
-      const existingUsers = response.data; // This should be fetched
-      const exists = existingUsers.some(
-        (user) => user.username === username && user.password === password
-      );
-
+      
       if (exists) {
         setModalMessage(`Welcome to Everest, ${username}`);
         setShowModal(true);
@@ -35,6 +30,21 @@ function ExistingCustomer() {
       setShowModal(true);
     }
   };
+  
+   if (username === "admin" && password === "admin") {
+        navigate("/admin");
+        alert("Welcome Admin!");
+        return;
+      }
+      const response = await axios.get("http://localhost:8082/customer/get"); 
+      const existingUsers = response.data;
+      const exists = existingUsers.some(user => user.username === username && user.password === password);
+
+      const response = await axios.get("http://localhost:8082/customer/get"); 
+      const existingUsers = response.data; // This should be fetched
+      const exists = existingUsers.some(
+        (user) => user.username === username && user.password === password
+      );
 
   const handleModalClose = () => {
     setShowModal(false);
@@ -73,7 +83,11 @@ function ExistingCustomer() {
                    required
         />
         <div className="mt-2">
-          <button type="submit" className="btn btn-dark btn-lg"> Login </button>
+
+          {/* <button type="submit" className="btn btn-dark btn-lg"> Login </button> */}
+          <button type="submit" className="btn btn-light btn-lg"> Login </button>
+        </div>
+
       </div>
       </div>
 

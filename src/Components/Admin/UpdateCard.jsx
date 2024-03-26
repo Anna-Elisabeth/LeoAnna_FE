@@ -56,6 +56,8 @@ function UpdateCard(props) {
   };
 
   return (
+
+
     <>
       <Card style={{ width: "300px", fontFamily: "Verdana, sans-serif" }} className="col-sm-6 col-md-4 col-lg-3 m-4">
         <div className="card-body ">
@@ -74,12 +76,13 @@ function UpdateCard(props) {
           </h4>
           <button onClick={() =>
             navigate("/items/edit/" + props.id)
-          } style={{ marginTop: "10px" }} type="submit" id="edit" className="btn btn-warning btn-md">
+          } style={{ marginTop: "10px" }} type="submit"  id="edititem" aria-label="edit item" className="btn btn-warning btn-md">
             {" "}
             Edit Item{" "}
           </button>
-          <button style={{ marginTop: "10px" }} className="btn btn-danger" onClick={deleteItem}>Delete Item</button>
-          <button style={{ marginTop: "10px" }} className="btn btn-primary" onClick={addToCart}>Add to Cart</button>
+          
+ <button style={{ marginTop: "10px" }} className="btn btn-danger" aria-label="delete item" onClick={deleteItem}>Delete Item</button>
+        
         </div>
       </Card>
 
@@ -93,6 +96,7 @@ function UpdateCard(props) {
         />
       )}
     </>
+
   );
 }
 UpdateCard.propTypes = {
