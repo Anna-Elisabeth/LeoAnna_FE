@@ -1,47 +1,67 @@
-import { useState } from "react";
-import axios from 'axios';
-import { useNavigate, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Modal from "./Modal";
 
-function ExistingCustomer(props) {
-
+function ExistingCustomer() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
   const navigate = useNavigate();
-  const params = useParams();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Form validation (optional)
+    
 
     try {
-
-      if (username === "admin" && password === "admin") {
+      
+      if (exists) {
+        setModalMessage(`Welcome to Everest, ${username}`);
+        setShowModal(true);
+      } else {
+        setModalMessage("No account found. Please register.");
+        setShowModal(true);
+      }
+    } catch (err) {
+      console.error(err);
+      setModalMessage("An error occurred. Please try again.");
+      setShowModal(true);
+    }
+  };
+  
+   if (username === "admin" && password === "admin") {
         navigate("/admin");
         alert("Welcome Admin!");
         return;
       }
-      const response = await axios.get("http://localhost:8082/customer/get"); // Replace with your API endpoint
+      const response = await axios.get("http://localhost:8082/customer/get"); 
       const existingUsers = response.data;
       const exists = existingUsers.some(user => user.username === username && user.password === password);
 
-      if (exists) {
-        navigate("/items"); // Navigate to the items page on successful login
-        alert(`Welcome to Everest, ${username}`);
-      } else {
-        alert("No account found. Please register.");
-        navigate("/customer");
-      }
-    } catch (err) {
-      console.error(err); // Handle potential errors during API call
-      alert("An error occurred. Please try again."); // Inform user about the error
+      const response = await axios.get("http://localhost:8082/customer/get"); 
+      const existingUsers = response.data; // This should be fetched
+      const exists = existingUsers.some(
+        (user) => user.username === username && user.password === password
+      );
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
+  const handleNavigate = () => {
+   
+    // conditional navigation set on modal button
+    if (modalMessage.includes("Welcome")) {
+      navigate("/items"); // Navigate to shop page if user exists
+    } else {
+      navigate("/customer"); // Navigate to  new customer page if user doesn't exist
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-
-      <br/>
       <h2 className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", width: "150px", backgroundColor: "#365074" }}>Login</h2>
       <div className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", fontSize: "20px",  marginTop: "50px", marginLeft: "50px", backgroundColor: "#365074", width: "350px" }}>
         <br/><label htmlFor="username">Username</label>
@@ -63,10 +83,22 @@ function ExistingCustomer(props) {
                    required
         />
         <div className="mt-2">
+
           {/* <button type="submit" className="btn btn-dark btn-lg"> Login </button> */}
           <button type="submit" className="btn btn-light btn-lg"> Login </button>
         </div>
+
       </div>
+      </div>
+
+      {showModal && (
+        <Modal
+          open={showModal}
+          onClose={handleModalClose}
+          message={modalMessage}
+          onNavigate={handleNavigate}
+        />
+      )}
     </form>
   );
 }
