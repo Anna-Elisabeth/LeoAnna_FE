@@ -15,6 +15,7 @@ The project remit is to fix bugs, find/make improvements and add features.
   - Checkout page added
   - Addressed minor errors flagged in console
   - Updated component name conventions for consistency
+  - Added functionality to prevent creation of duplicated items
 
 - Major Improvements:
   - Improved login functionality
