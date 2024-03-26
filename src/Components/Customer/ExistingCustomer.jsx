@@ -59,10 +59,10 @@ function ExistingCustomer() {
  
   return (
     <form onSubmit={handleLogin}>
-      <h2 className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", width: "150px", backgroundColor: "#365074" }}>Login</h2>
+      <h2 aria-label="login page" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", width: "150px", backgroundColor: "#365074" }}>Login</h2>
       <div className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", fontSize: "20px",  marginTop: "50px", marginLeft: "50px", backgroundColor: "#365074", width: "350px" }}>
         <br/><label htmlFor="username">Username</label>
-        <br/><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
+        <br/><input aria-label="username field" className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                    id="username"
                    name="username"
                    type="text"
@@ -71,7 +71,7 @@ function ExistingCustomer() {
                    required
         />
         <br/><label htmlFor="password">Password</label>
-        <br/><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px"}}
+        <br/><input aria-label="password field" className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px"}}
                    id="password"
                    name="password"
                    type="password"
@@ -80,7 +80,7 @@ function ExistingCustomer() {
                    required
         />
         <div className="mt-2">
-          <button type="submit" className="btn btn-light btn-lg"> Login </button>
+          <button aria-label="login button" type="submit" className="btn btn-light btn-lg"> Login </button>
         </div>
       </div>
  

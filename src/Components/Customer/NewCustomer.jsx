@@ -67,11 +67,10 @@ function NewCustomer(props) {
             }}>
 
                 <br></br>
-                <h1 className="border border-dark p-2 mb-2 border-4  border-dark  rounded" style={{ color: "White", fontFamily: "Verdana, sans-serif", width: "400px", backgroundColor: "#365074" }}>New Customer Registration</h1>
-
+                <h1 aria-label="registration page" className="border border-dark p-2 mb-2 border-4  border-dark  rounded" style={{ color: "White", fontFamily: "Verdana, sans-serif", width: "400px", backgroundColor: "#365074" }}>New Customer Registration</h1>
                 <div className="border  border-dark  p-2 mb-2 border-4  border-dark  rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", fontSize: "20px", marginTop: "30px", marginLeft: "200px", backgroundColor: "#365074", width: "350px" }}>
-                    <label htmlFor="name">Name</label>
-                    <br /><input className="form-control border-3  border-dark  rounded" style={{ width: "250px", height: "31px" }}
+                    <label  htmlFor="name">Name</label>
+                    <br /><input aria-label="name field" className="form-control border-3  border-dark  rounded" style={{ width: "250px", height: "31px" }}
                         id="name"
                         name="name"
                         type="text"
@@ -80,7 +79,7 @@ function NewCustomer(props) {
                         required
                     />
                     <br /><label htmlFor="address">Address</label>
-                    <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
+                    <br /><input aria-label="address field" className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                         id="address"
                         address="address"
                         type="text"
@@ -89,7 +88,7 @@ function NewCustomer(props) {
                         required
                     />
                     <br /><label htmlFor="email">Email</label>
-                    <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
+                    <br /><input aria-label="email field" className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                         id="email"
                         email="email"
                         type="text"
@@ -98,7 +97,7 @@ function NewCustomer(props) {
                         required
                     />
                     <br /><label htmlFor="phone">Phone</label>
-                    <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
+                    <br /><input aria-label="phone field" className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                         id="phone"
                         phone="phone"
                         type="text"
@@ -107,7 +106,7 @@ function NewCustomer(props) {
                         required
                     />
                     <br /><label htmlFor="username">Username</label>
-                    <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
+                    <br /><input aria-label="username field" className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                         id="username"
                         username="username"
                         type="text"
@@ -116,7 +115,7 @@ function NewCustomer(props) {
                         required
                     />
                     <br /><label htmlFor="password">Password</label>
-                    <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
+                    <br /><input aria-label="password field" className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                         id="password"
                         password="password"
                         type="password"

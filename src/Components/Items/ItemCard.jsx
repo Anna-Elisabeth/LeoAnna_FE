@@ -50,7 +50,7 @@ function ItemCard(props) {
 
   return (
     <>
-      <Card style={{ width: "300px" }} className="col-sm-6 col-md-4 col-lg-3 m-4">
+      <Card style={{ width: "300px" }} aria-label="item card" className="col-sm-6 col-md-4 col-lg-3 m-4">
         <div className="card-body ">
           <h4 className="card-title">
             {" "}

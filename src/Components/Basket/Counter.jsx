@@ -38,9 +38,9 @@ function Counter({ value, onChange }) {
                 value={count}
             />
             <br />
-            <button style={{ marginRight: "15px" }} className="btn btn-primary" type="button" onClick={decrementCount}>-</button>
-            <button className="btn btn-primary" type="button" onClick={clearCount}>Clear</button>
-            <button style={{ margin: "15px" }} className="btn btn-primary" type="button" onClick={incrementCount}>+</button>
+            <button aria-label="descrease button" style={{ marginRight: "15px" }} className="btn btn-primary" type="button" onClick={decrementCount}>-</button>
+            <button aria-label="clear button" className="btn btn-primary" type="button" onClick={clearCount}>Clear</button>
+            <button aria-label="increase button" style={{ margin: "15px" }} className="btn btn-primary" type="button" onClick={incrementCount}>+</button>
         </div>
     );
 }

@@ -59,7 +59,7 @@ function UpdateCard(props) {
 
 
     <>
-      <Card style={{ width: "300px", fontFamily: "Verdana, sans-serif" }} className="col-sm-6 col-md-4 col-lg-3 m-4">
+      <Card aria-label="item card" style={{ width: "300px", fontFamily: "Verdana, sans-serif" }} className="col-sm-6 col-md-4 col-lg-3 m-4">
         <div className="card-body ">
           <h4 className="card-title">
             {" "}
@@ -68,20 +68,21 @@ function UpdateCard(props) {
               alt="avatar"
               className="card-person"
               style={{ maxWidth: '50%', height: '50%' }}
+              aria-label="item image"
             />
-            <p> {props.name}</p>
-            <p> {props.description}</p>
+            <p aria-label="item name"> {props.name}</p>
+            <p aria-label="item description"> {props.description}</p>
 
-          <p>Price: £{props.price}</p>
+          <p aria-label="item price">Price: £{props.price}</p>
           </h4>
           <button onClick={() =>
             navigate("/items/edit/" + props.id)
-          } style={{ marginTop: "10px" }} type="submit"  id="edititem" aria-label="edit item" className="btn btn-warning btn-md">
+          } style={{ marginTop: "10px" }} type="submit"  id="edititem" aria-label="edit item button" className="btn btn-warning btn-md">
             {" "}
             Edit Item{" "}
           </button>
           
- <button style={{ marginTop: "10px" }} className="btn btn-danger" aria-label="delete item" onClick={deleteItem}>Delete Item</button>
+ <button style={{ marginTop: "10px" }} className="btn btn-danger" aria-label="delete item button" onClick={deleteItem}>Delete Item</button>
         
         </div>
       </Card>
