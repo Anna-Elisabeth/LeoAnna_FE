@@ -32,21 +32,20 @@ function Navbar() {
             <div className="col-md-5 my-auto">
               <ul className="nav">
                 <li className="nav-item">
-                  <Link to="/customer" className="nav-link" title="link to registration page" aria-label="link to registration page" style={{  fontFamily: "Verdana, sans-serif", fontSize: "20px", color: "white", textDecoration: "underline" }}>
-                    New Customer
+                  <Link to="/customer" className="nav-link" title="link to registration page" aria-label="link to registration page" style={{  fontFamily: "Verdana, sans-serif", fontSize: "30px", color: "white" }}>
+                    Sign up
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/items" className="nav-link" title="link to item page" aria-label="link to item page" style={{ fontFamily: "Verdana, sans-serif", fontSize: "20px", color: "white", textDecoration: "underline" }}>
-                    Items
+                  <Link to="/items" className="nav-link" title="link to item page" aria-label="link to item page" style={{ fontFamily: "Verdana, sans-serif", fontSize: "30px", color: "white" }}>
+                    Products
                   </Link>
                 </li>
-                
-                {/* <li className="nav-item">
-                  <Link to="/admin" className="nav-link"  title="link to admin page" aria-label="link to admin page" style={{ fontSize: "20px", fontFamily: "Verdana, sans-serif", color: "white", textDecoration: "underline" }}>
-                    Admin
+                <li className="nav-item">
+                  <Link to="/report-issues" className="nav-link"  title="link to admin page" aria-label="link to admin page" style={{ fontFamily: "Verdana, sans-serif", fontSize: "30px", color: "white" }}>
+                    Report issues
                   </Link>
-                </li> */}
+                </li>
               </ul>
             </div>
             <div className="col-md-auto my-auto">

@@ -86,7 +86,7 @@ function ItemAdmin(props) {
 
           {" "}
           <br></br>
-          <h1 aria-label="admin page" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", width: "400px", backgroundColor: "#365074", margin: "auto" }}>Admin Portal </h1>
+          <h1 aria-label="admin page" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", width: "300px", backgroundColor: "#365074", margin: "auto" }}>Admin Portal </h1>
 
 
           <br />

@@ -1,4 +1,4 @@
-/* Styles for larger screens */
+
 .App {
   text-align: center;
 }
@@ -43,22 +43,22 @@
   }
 }
 
-/* Styles for smaller screens */
+
 @media only screen and (max-width: 768px) {
   .homeimage {
-    height: 1cm; /* Adjust height for smaller screens */
-    width: 7cm;  /* Adjust width for smaller screens */
+    height: 1cm; 
+    width: 7cm; 
   }
 }
 
 @media only screen and (max-width: 576px) {
   .homeimage {
-    height: 0.5cm; /* Adjust height for even smaller screens */
-    width: 5cm;    /* Adjust width for even smaller screens */
+    height: 0.5cm; 
+    width: 5cm;    
   }
 }
 
-/* Remaining styles */
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

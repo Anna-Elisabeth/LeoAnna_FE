@@ -82,7 +82,7 @@ function UpdateCard(props) {
             Edit Item{" "}
           </button>
           
- <button style={{ marginTop: "10px" }} className="btn btn-danger" aria-label="delete item button" onClick={deleteItem}>Delete Item</button>
+ <button style={{ marginLeft:"10px", marginTop: "10px" }} className="btn btn-danger" aria-label="delete item button" onClick={deleteItem}>Delete Item</button>
         
         </div>
       </Card>
