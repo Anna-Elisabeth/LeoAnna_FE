@@ -14,7 +14,7 @@ import LoginCustomer from './Components/Customer/ExistingCustomer';
 import Home from './Components/Home';
 import ItemAdmin from './Components/Admin/ItemAdmin';
 import Payment from './Components/Basket/Payment';
-
+import ReportIssuesForm from './Components/ReportIssuesForm';
 
 function App() {
   
@@ -33,6 +33,7 @@ function App() {
         <Route path='/customer/edit/:id' element={<EditCustomer />} />
         <Route path='/customer/existing/:id'/>
         <Route path='/customer/get/:id' element={<Basket/>}/>
+        <Route path='/report-issues' element={<ReportIssuesForm/>}/>
       </Routes>
     </Router>
 

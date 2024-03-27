@@ -76,18 +76,18 @@ function Basket(props) {
         <div>
           
           <header>
-             <h2 class="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white",  fontFamily: "Verdana, sans-serif", backgroundColor: "#365074", width: "150px"}}>Basket: </h2>
+             <h2 aria-label="basket page" class="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white",  fontFamily: "Verdana, sans-serif", backgroundColor: "#365074", width: "150px"}}>Basket: </h2>
              </header>
              <main>
       
       <table className="table" aria-label="table" style={{fontFamily: "Verdana, sans-serif", fontSize: "20px" }}>
         <thead>
           <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
+            <th aria-label="image">Image</th>
+            <th aria-label="name">Name</th>
+            <th aria-label="price">Price</th>
+            <th aria-label="quantity">Quantity</th>
+            <th aria-label="item price total">Total</th>
             <th></th>
           </tr>
         </thead>
@@ -111,14 +111,13 @@ function Basket(props) {
                 />
               </td>
               <td className="text-decoration-underline"  style={{color: "blue"}}>£ {(basketItem.price * (basketItem.quantity || 0)).toFixed(2)}</td>
-              <td><button className="btn btn-primary" aria-label="Remove" onClick={() => removeFromBasket(basketItem.id)}>Remove</button></td>
+              <td><button className="btn btn-primary" aria-label="Remove product button" onClick={() => removeFromBasket(basketItem.id)}>Remove</button></td>
             </tr>
           ))}
         </tbody>
       </table><br></br>
-            <div><h2 className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{  color: "white",  fontFamily: "Verdana, sans-serif", backgroundColor: "#365074", width: "350px"}}>Basket Total : £{basketTotal}</h2></div>
-           
-            <button className="btn btn-primary btn-lg" type="button" onClick={() => navigate('/checkout')} aria-label="Checkout">Checkout</button>
+            <div><h2 aria-label="basket total" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{  color: "white",  fontFamily: "Verdana, sans-serif", backgroundColor: "#365074", width: "350px"}}>Basket Total : £{basketTotal}</h2></div>
+            <button  className="btn btn-primary btn-lg" type="button" onClick={() => navigate('/checkout')} aria-label="Checkout button">Checkout</button>
             </main>
         </div>
     );
