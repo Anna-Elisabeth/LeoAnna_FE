@@ -67,8 +67,12 @@ function ReportIssuesForm() {
             style={{ fontSize: "25px" }}
           />
         </div>
+        <div>
         <button aria-label="submit button" type="submit" className="btn btn-light btn-lg" >Submit</button>
-        {showModal && (
+        </div>
+        
+      </form>
+      {showModal && (
         <Modal
           open={showModal}
           onClose={handleModalClose}
@@ -76,7 +80,6 @@ function ReportIssuesForm() {
           onNavigate={handleNavigate}
         />
       )}
-      </form>
     </div>
   );
 }
