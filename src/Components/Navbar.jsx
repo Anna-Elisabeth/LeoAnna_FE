@@ -42,11 +42,11 @@ function Navbar() {
                   </Link>
                 </li>
                 
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link to="/admin" className="nav-link"  title="link to admin page" aria-label="link to admin page" style={{ fontSize: "20px", fontFamily: "Verdana, sans-serif", color: "white", textDecoration: "underline" }}>
                     Admin
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="col-md-auto my-auto">
