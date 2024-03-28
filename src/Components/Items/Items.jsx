@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import DisplayItems from "./DisplayItems";
 
+// Items component
 function Items (props) {
 
     const [name, setName] = useState("");
@@ -10,20 +11,24 @@ function Items (props) {
     const [items, setItem] = useState([]);
     const [description, setDescription] = useState("");
 
+    // Function to fetch items from the server
     function getItems() {
         axios.get("http://localhost:8082/item/get")
         .then((response) => { setItem(response.data)})
         .catch((err) => console.error(err));
     }
+    // Fetch items on component mount
     useEffect(() => {
         getItems();
     }, []);
 
+    // Function to create a new item
     function createItem() {
         axios.post("http://localhost:8082/item/create",{
         name, price, quantity, description})
         .then((response) => { 
             console.log(response);
+            // Clear input fields and fetch items again
             setName("");
             setPrice("");
             setQuantity("");
@@ -31,7 +36,7 @@ function Items (props) {
             getItems();
         })
         .catch(err => console.error(err));
-    
+                // Logic to check if the item already exists
                 axios.get("http://localhost:8082/item/get")
                 .then(response => {
                 console.log(response)

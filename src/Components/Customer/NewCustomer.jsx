@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from "react-router-dom";
 import Modal from "../Customer/Modal";
 
+// Component for registering new customers
 function NewCustomer(props) {
 
     const navigate = useNavigate();
@@ -17,23 +18,25 @@ function NewCustomer(props) {
     const [modalMessage, setModalMessage] = useState("");
     
     
-
+    // Function to check if customer already exists, then create new customer
     function CheckCustomer() {
 
         axios.get("http://localhost:8082/customer/get").then(response => {
             console.log(response)
             for (const customer of response.data) {
                 if (customer.username.toLowerCase() === username.toLowerCase()) {
+                    // If customer already exists, show modal
                     setModalMessage("Customer already exists");
                     setShowModal(true)
                     return;
                 }
             }
-
+            // If customer does not exist, create new customer
             axios.post("http://localhost:8082/customer/create",
                 { name, address, email, phone, username, password })
                 .then(response => {
                     console.log(response);
+                    // Reset form fields and fetch updated customer list
                     setName("");
                     setAddress("");
                     setEmail("");
@@ -48,11 +51,12 @@ function NewCustomer(props) {
 
 
     }
-
+    // Function to handle navigation after modal is closed
     const handleNavigate = () => {
         navigate("/");
         setShowModal(false);
     };
+    // Function to handle closing modal
     const handleModalClose = () => {
         setShowModal(false);
       };
@@ -67,11 +71,11 @@ function NewCustomer(props) {
             }}>
 
                 <br></br>
-                <h1 className="border border-dark p-2 mb-2 border-4  border-dark  rounded" style={{ color: "White", fontFamily: "Verdana, sans-serif", width: "400px", backgroundColor: "#365074" }}>New Customer Registration</h1>
-
+                <h1 aria-label="registration page" className="border border-dark p-2 mb-2 border-4  border-dark  rounded" style={{ color: "White", fontFamily: "Verdana, sans-serif", width: "400px", backgroundColor: "#365074" }}>New Customer Registration</h1>
                 <div className="border  border-dark  p-2 mb-2 border-4  border-dark  rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", fontSize: "20px", marginTop: "30px", marginLeft: "200px", backgroundColor: "#365074", width: "350px" }}>
-                    <label htmlFor="name">Name</label>
-                    <br /><input className="form-control border-3  border-dark  rounded" style={{ width: "250px", height: "31px" }}
+                    {/* Form inputs */}
+                    <label  htmlFor="name">Name</label>
+                    <br /><input aria-label="name field" className="form-control border-3  border-dark  rounded" style={{ width: "250px", height: "31px" }}
                         id="name"
                         name="name"
                         type="text"
@@ -80,7 +84,7 @@ function NewCustomer(props) {
                         required
                     />
                     <br /><label htmlFor="address">Address</label>
-                    <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
+                    <br /><input aria-label="address field" className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                         id="address"
                         address="address"
                         type="text"
@@ -89,7 +93,7 @@ function NewCustomer(props) {
                         required
                     />
                     <br /><label htmlFor="email">Email</label>
-                    <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
+                    <br /><input aria-label="email field" className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                         id="email"
                         email="email"
                         type="text"
@@ -98,7 +102,7 @@ function NewCustomer(props) {
                         required
                     />
                     <br /><label htmlFor="phone">Phone</label>
-                    <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
+                    <br /><input aria-label="phone field" className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                         id="phone"
                         phone="phone"
                         type="text"
@@ -107,7 +111,7 @@ function NewCustomer(props) {
                         required
                     />
                     <br /><label htmlFor="username">Username</label>
-                    <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
+                    <br /><input aria-label="username field" className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                         id="username"
                         username="username"
                         type="text"
@@ -116,7 +120,7 @@ function NewCustomer(props) {
                         required
                     />
                     <br /><label htmlFor="password">Password</label>
-                    <br /><input className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
+                    <br /><input aria-label="password field" className="form-control border-3 border-dark rounded" style={{ width: "250px", height: "31px" }}
                         id="password"
                         password="password"
                         type="password"
@@ -132,7 +136,7 @@ function NewCustomer(props) {
 
 
                 </div>
-
+                {/* Modal message component */}
                 {showModal && (
                     <Modal
                         open={showModal}

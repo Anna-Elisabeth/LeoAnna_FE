@@ -1,20 +1,17 @@
 import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
-import Logo2 from './Logo2.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import Navbar from './Components/Navbar';
 import Items from './Components/Items/Items';
-import ItemsPT from './Components/Items/ItemCard';
 import EditItems from './Components/Items/EditItems';
 import Customers from './Components/Customer/Customer';
 import EditCustomer from './Components/Customer/EditCustomer';
 import Basket from './Components/Basket/Basket';
-import LoginCustomer from './Components/Customer/ExistingCustomer';
 import Home from './Components/Home';
 import ItemAdmin from './Components/Admin/ItemAdmin';
 import Payment from './Components/Basket/Payment';
-
+import ContactForm from './Components/ContactForm';
 
 function App() {
   
@@ -33,6 +30,7 @@ function App() {
         <Route path='/customer/edit/:id' element={<EditCustomer />} />
         <Route path='/customer/existing/:id'/>
         <Route path='/customer/get/:id' element={<Basket/>}/>
+        <Route path='/contactus' element={<ContactForm/>}/>
       </Routes>
     </Router>
 
