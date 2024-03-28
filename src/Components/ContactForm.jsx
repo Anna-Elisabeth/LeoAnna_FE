@@ -18,7 +18,7 @@ function ContactForm() {
       // Send form data to server
       await axios.post("http://localhost:8082/report/submit", { email, issue });
       // Set modal message and display modal
-      setModalMessage('Issue reported successfully!');
+      setModalMessage('Thank you for your feedback!');
       setShowModal(true);
       return;
       
