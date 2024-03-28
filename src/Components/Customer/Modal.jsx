@@ -1,16 +1,19 @@
 import Logo5 from "./Logo5.png";
 import './Modal.css';
 
+// Modal component definition
 const Modal = ({ open, onClose, message, onNavigate }) => {
+  // If the modal is not open, return null
   if (!open) return null;
 
+  // Render the modal
   return (
     <div onClick={onClose} className='overlay'>
       <div
         onClick={(e) => {
-          e.stopPropagation();
+          e.stopPropagation(); // Prevent closing the modal when modal content is clicked
         }}
-        className='modalContainer'
+        className='modalContainer' // Main container for the modal
       >
         <img src={Logo5} alt='dolphinity logo' />
         <div className='modalRight'>

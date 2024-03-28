@@ -8,6 +8,8 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import Modal from "../Customer/Modal";
 
+
+// Component to display and manage individual items
 function UpdateCard(props) {
   const params = useParams("");
   const [showModal, setShowModal] = useState(false);
@@ -15,6 +17,7 @@ function UpdateCard(props) {
   const [itemID, setItemID] = useState("");
   const navigate = useNavigate();
 
+  // Function to delete an item
   function deleteItem() {
     axios.delete("http://localhost:8082/item/delete/" + props.id)
       .then(response => { 
@@ -23,6 +26,7 @@ function UpdateCard(props) {
       .catch(err => console.error(err))
   }
 
+  // Function to get image URL for a product
   function getImageUrl(productName) {
     const productNameLower = productName.toLowerCase();
     if (productNameLower in productImages) {
@@ -31,7 +35,7 @@ function UpdateCard(props) {
       return "/default.png";
     }
   }
-
+  // Function to add an item to the cart
   function addToCart() {
     const itemID = props.id
     if (!itemID) {
@@ -46,18 +50,17 @@ function UpdateCard(props) {
         setShowModal(true);
       }).catch(err => console.error(err))
   }
-
+  // Function to handle modal close event
   const handleModalClose = () => {
     setShowModal(false);
   };
-
+  // Function to handle navigation after adding item to cart
   const handleNavigate = () => {
     navigate("/items"); // Navigate to items page after adding to cart
   };
 
+  // Render the UpdateCard component
   return (
-
-
     <>
       <Card aria-label="item card" style={{ width: "300px", fontFamily: "Verdana, sans-serif" }} className="col-sm-6 col-md-4 col-lg-3 m-4">
         <div className="card-body ">
@@ -87,7 +90,7 @@ function UpdateCard(props) {
         </div>
       </Card>
 
-      {/* Modal for success message */}
+      {/* Modal message component */}
       {showModal && (
         <Modal
           open={showModal}

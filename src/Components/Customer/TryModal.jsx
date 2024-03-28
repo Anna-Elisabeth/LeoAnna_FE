@@ -2,6 +2,7 @@ import { useState } from "react";
 import './Modal.css';
 import Modal from './Modal';
 
+// Component to test Modal functionality
 function TryModal() {
   const [openModal, setOpenModal] = useState(false);
 
@@ -9,6 +10,7 @@ function TryModal() {
 
   return (
     <div>
+      {/* Button to open the modal */}
       <button 
       onClick={() => setOpenModal(true)} 
       className='modalButton'>

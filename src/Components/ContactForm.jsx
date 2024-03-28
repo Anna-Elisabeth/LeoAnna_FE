@@ -3,35 +3,39 @@ import axios from 'axios';
 import Modal from './Customer/Modal';
 import { useNavigate } from "react-router-dom";
 
-function ReportIssuesForm() {
+// Contact form conponent
+function ContactForm() {
   const [email, setEmail] = useState('');
   const [issue, setIssue] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
   const navigate = useNavigate();
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      
+      // Send form data to server
       await axios.post("http://localhost:8082/report/submit", { email, issue });
+      // Set modal message and display modal
       setModalMessage('Issue reported successfully!');
       setShowModal(true);
       return;
       
     } catch (error) {
       console.error('Error reporting issue:', error);
-    //   alert('An error occurred while reporting the issue.');
+    
     }
   };
-
+  // Handle to close modal
   const handleModalClose = () => {
     setShowModal(false);
   };
 
+  // Navigate to contact page after successful submission
   const handleNavigate = () => {
     if (modalMessage.includes("Issue")) {
-      navigate("/report-issues");
+      navigate("/contactus");
       setShowModal(false);
       setEmail("");
       setIssue("");
@@ -39,8 +43,10 @@ function ReportIssuesForm() {
 
   return (
     <div className="container mt-4">
-      <h2 aria-label="report issue form" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", width: "250px", backgroundColor: "#365074" }}>Report Issues</h2>
+      {/* Contact form title */}
+      <h2 aria-label="contact form" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", width: "250px", backgroundColor: "#365074" }}>Contact us</h2>
       <form onSubmit={handleSubmit}>
+        {/* Email & description input */}
         <div className="mb-3">
             <br />
             <br />
@@ -56,7 +62,7 @@ function ReportIssuesForm() {
           />
         </div>
         <div className="mb-3">
-          <label aria-label="email field" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{fontSize:"25px", color: "white", fontFamily: "Verdana, sans-serif", width: "270px", backgroundColor: "#365074" }} htmlFor="issue" >Describe the issue:</label>
+          <label aria-label="description field" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{fontSize:"25px", color: "white", fontFamily: "Verdana, sans-serif", width: "270px", backgroundColor: "#365074" }} htmlFor="issue" >Description:</label>
           <textarea
             className="form-control"
             id="issue"
@@ -72,6 +78,7 @@ function ReportIssuesForm() {
         </div>
         
       </form>
+      {/* Modal message component */}
       {showModal && (
         <Modal
           open={showModal}
@@ -84,4 +91,4 @@ function ReportIssuesForm() {
   );
 }
 
-export default ReportIssuesForm;
+export default ContactForm;
