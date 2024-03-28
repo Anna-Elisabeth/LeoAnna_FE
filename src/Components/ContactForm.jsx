@@ -44,7 +44,7 @@ function ContactForm() {
   return (
     <div className="container mt-4">
       {/* Contact form title */}
-      <h2 aria-label="contact form" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", width: "1000px", backgroundColor: "#365074" }}>Contact us! <br /> Help us improve our site or collaborate with us. <br />Please let us know about any accessibility issues you encounter  </h2>
+      <h2 aria-label="contact form" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", width: "1100px", backgroundColor: "#365074" }}>Contact us! <br /> Help us improve our site or collaborate with us. <br />Please let us know about any accessibility issues you encounter.  </h2>
       <form onSubmit={handleSubmit}>
         {/* Email & description input */}
         <div className="mb-3">
