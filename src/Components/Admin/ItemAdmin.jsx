@@ -5,6 +5,7 @@ import CustomerList from "../Customer/CustomerList";
 import DisplayAdminItems from "./DisplayAdminItems";
 import { useNavigate } from "react-router-dom";
 
+// Component for the admin panel to manage items and customers
 function ItemAdmin(props) {
 
   const [name, setName] = useState("");
@@ -16,6 +17,7 @@ function ItemAdmin(props) {
   const [modalMessage, setModalMessage] = useState("");
   const navigate = useNavigate();
 
+  // Function to fetch items from the server
   function getItems() {
     axios.get("http://localhost:8082/item/get")
       .then((response) => { setItem(response.data) })
@@ -25,6 +27,7 @@ function ItemAdmin(props) {
     getItems();
   }, []);
 
+  // Function to create a new item
   function createItem() {
     const itemExists = items.some(
       (item) =>
@@ -67,13 +70,17 @@ function ItemAdmin(props) {
   useEffect(() => { getCustomer() }, [])
   const [customers, setCustomer] = useState([])
 
+  // Function to handle navigation after closing the modal
   const handleNavigate = () => {
     navigate("/admin"); 
     setShowModal(false); 
   };
+  // Function to close the modal
   const handleModalClose = () => {
     setShowModal(false);
   };
+
+  // Render the Item admin component
   return (
     <div>
       <main>
@@ -86,38 +93,38 @@ function ItemAdmin(props) {
 
           {" "}
           <br></br>
-          <h1 className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", width: "400px", backgroundColor: "#365074", margin: "auto" }}>Admin Portal </h1>
+          <h1 aria-label="admin page" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", width: "300px", backgroundColor: "#365074", margin: "auto" }}>Admin Portal </h1>
 
 
           <br />
 
-          <h2 className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ marginLeft: "50px", marginTop: "50px", width: "180px", color: "white", fontFamily: "Verdana, sans-serif", backgroundColor: "#365074" }} >Items</h2>
+          <h2 aria-label="item display" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ marginLeft: "50px", marginTop: "50px", width: "180px", color: "white", fontFamily: "Verdana, sans-serif", backgroundColor: "#365074" }} >Items</h2>
           <div className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ color: "white", fontFamily: "Verdana, sans-serif", fontSize: "20px", marginTop: "50px", marginLeft: "50px", backgroundColor: "#365074", width: "350px" }}>
-            <label htmlFor="fn">Create New Item: &nbsp;</label>
+            <label aria-label="create item form" htmlFor="fn">Create New Item: &nbsp;</label>
             <br />
             <label htmlFor="fn">Item Name: &nbsp;</label>
-            <input className="form-control border-3 border-dark rounded" aria-label="Item name" style={{ width: "250px", height: "31px" }}
+            <input  className="form-control border-3 border-dark rounded" aria-label="item name field" style={{ width: "250px", height: "31px" }}
               value={name}
               onChange={(e) => setName(e.target.value)}
               id="iname"
               type="text"
             />
             <label htmlFor="fn">Item Description: &nbsp;</label>
-            <input className="form-control border-3 border-dark rounded" aria-label="Item Description" style={{ width: "250px", height: "31px" }}
+            <input  className="form-control border-3 border-dark rounded" aria-label="item Description field" style={{ width: "250px", height: "31px" }}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               id="idesc"
               type="text"
             />
             <label htmlFor="ln">Price: &nbsp;</label>
-            <input className="form-control border-3 border-dark rounded" aria-label="Price" style={{ width: "250px", height: "31px" }}
+            <input className="form-control border-3 border-dark rounded" aria-label="item price field" style={{ width: "250px", height: "31px" }}
               value={price}
               onChange={(e) => setPrice(e.target.value)}
               id="iprice"
               type="text"
             />
             <label htmlFor="ad">Quantity: &nbsp; &nbsp; &nbsp;</label>
-            <input className="form-control border-3 border-dark rounded" aria-label="Quantity" style={{ width: "250px", height: "31px" }}
+            <input className="form-control border-3 border-dark rounded" aria-label="item quantity field" style={{ width: "250px", height: "31px" }}
               value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
               id="iquant"

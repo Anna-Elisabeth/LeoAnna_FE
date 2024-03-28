@@ -15,6 +15,7 @@ function ItemCard(props) {
   const [itemID, setItemID] = useState("");
   const navigate = useNavigate();
 
+  // Function to get image URL based on product name
   function getImageUrl(productName) {
     const productNameLower = productName.toLowerCase();
     if (productNameLower in productImages) {
@@ -23,7 +24,7 @@ function ItemCard(props) {
       return "/default.png";
     }
   }
-
+  // Function to add item to cart
   function addToCart() {
     const itemID = props.id
     if (!itemID) {
@@ -38,37 +39,41 @@ function ItemCard(props) {
         setShowModal(true);
       }).catch(err => console.error(err))
   }
-
+  // Close modal
   const handleModalClose = () => {
     setShowModal(false);
   };
-
+  // Navigate to items page after adding to cart
   const handleNavigate = () => {
-    navigate("/items"); // Navigate to items page after adding to cart
-    setShowModal(false); // Close the modal
+    navigate("/items"); 
+    setShowModal(false); 
   };
 
   return (
     <>
-      <Card style={{ width: "300px" }} className="col-sm-6 col-md-4 col-lg-3 m-4">
+    {/* Item card */}
+      <Card style={{ width: "300px" }} aria-label="item card" className="col-sm-6 col-md-4 col-lg-3 m-4">
         <div className="card-body ">
           <h4 className="card-title">
             {" "}
+            {/* Item image */}
             <img
               src={getImageUrl(props.name)}
               alt="avatar"
               className="card-person"
               style={{ maxWidth: '50%', height: '50%' }}
             />
+            {/* Item details */}
             <p>Product: {props.name}</p>
             <p>Description: {props.description}</p>
           <p>Price: £{props.price}</p>
           </h4>
+          {/* Button to add item to cart */}
           <button style={{ marginTop: "10px", marginRight: "15px" }} className="btn btn-success btn-md" onClick={addToCart}>Add to Cart</button>
         </div>
       </Card>
 
-      {/* Modal for success message */}
+      {/* Modal message component */}
       {showModal && (
         <Modal
           open={showModal}
