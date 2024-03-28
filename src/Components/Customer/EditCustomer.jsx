@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
+// Function to edit items
 function EditCustomer() {
 
     const navigate = useNavigate();
@@ -12,11 +13,12 @@ function EditCustomer() {
     const [phone, setPhone] = useState("")
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-
+    // Fetch customer details based on ID from the URL
     useEffect(() => {
         axios.get("http://localhost:8082/customer/get/" + params.id)
             .then((res) => {
                 console.log(res);
+                // Set the retrieved customer details to state variables
                 setName(res.data.name);
                 setAddress(res.data.address);
                 setEmail(res.data.email);
@@ -25,20 +27,23 @@ function EditCustomer() {
                 setPassword(res.data.password);
             }).catch((err) => console.error(err))
     }, [params.id]);
+    
+    // Function to handle form submission for updating customer details
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // Send PATCH request to update customer details
         axios
             .patch("http://localhost:8082/customer/update/" + params.id, {
                 name, address, email, phone, username, password
             })
-
+            // Redirect to admin page after successful update
             .then(() => {
                 navigate("/admin");
             })
             .catch((error) => console.error(error));
     };
-
+    // Render the form for editing customer details
     return (
         <form onSubmit={handleSubmit}>
             <br />

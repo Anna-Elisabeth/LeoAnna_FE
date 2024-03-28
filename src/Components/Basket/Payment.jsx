@@ -4,6 +4,7 @@ import Modal from "../Customer/Modal";
 import confetti from "canvas-confetti";
 import { useNavigate } from "react-router-dom";
 
+// Payment component
 function Payment() {
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
@@ -16,9 +17,11 @@ function Payment() {
 
   const navigate = useNavigate();
 
+  // Function to handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
     setModalMessage("Your order is now complete");
+    handleConfetti();
     setShowModal(true);
     setName("");
     setCardNumber("");
@@ -26,23 +29,24 @@ function Payment() {
     setCVC("");
     setPostcode("");
   };
-
+  // Function to generate confetti effect
   const handleConfetti = () => {
     confetti({
       particleCount: 500,
       spread: 320,
     });
   };
-
+  // Function to close the modal
   const handleModalClose = () => {
     setShowModal(false);
   };
-
+  // Function to navigate to another page
   const handleNavigate = () => {
     navigate("/checkout"); 
     setShowModal(false); 
   };
 
+  {/* Payment form */}
   return (
     <div>
     <header>
@@ -112,7 +116,7 @@ function Payment() {
         </div>
       </form>
 
-      {/* Modal for success message */}
+      {/* Modal message component */}
       {showModal && (
         <Modal
           open={showModal}

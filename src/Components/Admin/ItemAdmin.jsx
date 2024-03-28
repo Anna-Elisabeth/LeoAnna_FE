@@ -5,6 +5,7 @@ import CustomerList from "../Customer/CustomerList";
 import DisplayAdminItems from "./DisplayAdminItems";
 import { useNavigate } from "react-router-dom";
 
+// Component for the admin panel to manage items and customers
 function ItemAdmin(props) {
 
   const [name, setName] = useState("");
@@ -16,6 +17,7 @@ function ItemAdmin(props) {
   const [modalMessage, setModalMessage] = useState("");
   const navigate = useNavigate();
 
+  // Function to fetch items from the server
   function getItems() {
     axios.get("http://localhost:8082/item/get")
       .then((response) => { setItem(response.data) })
@@ -25,6 +27,7 @@ function ItemAdmin(props) {
     getItems();
   }, []);
 
+  // Function to create a new item
   function createItem() {
     const itemExists = items.some(
       (item) =>
@@ -67,13 +70,17 @@ function ItemAdmin(props) {
   useEffect(() => { getCustomer() }, [])
   const [customers, setCustomer] = useState([])
 
+  // Function to handle navigation after closing the modal
   const handleNavigate = () => {
     navigate("/admin"); 
     setShowModal(false); 
   };
+  // Function to close the modal
   const handleModalClose = () => {
     setShowModal(false);
   };
+
+  // Render the Item admin component
   return (
     <div>
       <main>
