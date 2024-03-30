@@ -21,6 +21,7 @@ The project remit is to fix bugs, find/make improvements and add features.
   - Improved login functionality
   - Admin and basket interfaces updated for better organisation
   - Admin login and navigate to Admin page
+  - Implemented a fully responsive contact form feature
  
 - New Features:
   - Accessibility:
